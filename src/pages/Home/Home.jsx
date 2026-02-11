@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MousePointer2, Droplets, Leaf, ShieldCheck } from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
-import WaterBackground from "../../components/WaterBackGround";
-import Water2 from "../../components/Water2";
+// import WaterBackground from "../../components/WaterBackGround";
+// import Water2 from "../../components/Water2";
 import { MotionTextMath } from "../../components/MotionTextOrchestra";
 
 MotionTextMath;
