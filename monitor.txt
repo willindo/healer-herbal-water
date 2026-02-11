@@ -1,0 +1,11 @@
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+Here is our Implementation Roadmap:
+
+Phase 1: The Core Shell (Routing & Layout) – Connect all pages so we can navigate.
+
+Phase 2: The Alchemy (The 9 Herbs) – Building the "Heart" of the site.
+
+Phase 3: The Roots (About/Vision) – Establishing brand trust.
+
+Phase 4: The Journal & Sensory Touch – Adding the blog and animations
+ git config --global credential.helper osxkeychain
