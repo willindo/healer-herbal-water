@@ -20,7 +20,7 @@ const Home = () => {
     <>
       {/* <WaterBackground /> */}
       {/* <Water2 /> */}
-      <section className="relative  h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative  h-screen flex items-center justify-center overflow-hidden  border-0 ">
         <div
           className="absolute inset-0"
           style={{
@@ -64,14 +64,14 @@ const Home = () => {
               }}
             >
               {"Heal Naturally".split("").map((char, i) => (
-                <span key={i} className="text-8xl font-serif  ">
+                <span key={i} className="text-8xl font-serif text-[green] ">
                   {char}
                 </span>
               ))}
             </LayoutOrchestra>
           </div>
 
-          <div className="p-6 space-y-4 flex flex-col ">
+          <div className="p-6 space-y-4 flex flex-col text-[#08b508] ">
             <MotionTextMath
               text="Live Fully "
               pattern="lissajous"
@@ -108,8 +108,8 @@ const Home = () => {
       <div className="absolute top-[75px] lef-[50px]  animate-bounce text-[teal]">
         <Droplets size={32} />
       </div>
-      <section className="pt-16 pb-24 bg-white/30 border-y border-healer-green/5">
-        
+      <section className="pt-16 pb-24 bg-white/30  bg-gradient-to-b from-[#0c74ad] vi-[#0ea5e9]/80 to-transparent">
+        {" "}
         <AnimatedScope
           className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
           animation="slideRight"
