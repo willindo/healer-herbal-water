@@ -21,6 +21,7 @@ export interface LayoutConfig {
   spiralStepDeg?: number; // ✅ added for correct spiral stepping
   controlPoints?: [number, number][];
   cols?: number;
+  upright?: boolean;
 }
 
 export interface LayoutOrchestraProps {
@@ -105,8 +106,8 @@ const LayoutOrchestra: React.FC<LayoutOrchestraProps> = ({
           pos.push({
             x: radius * Math.cos(finalAngle),
             y: radius * Math.sin(finalAngle),
-            // 3. Rotate the letter to be tangent to the circle
-            rotate: (finalAngle * 180) / Math.PI + 90,
+            // If upright is true, rotation is 0. Otherwise, calculate tangent.
+            rotate: cfg.upright ? 0 : (finalAngle * 180) / Math.PI + 90,
           });
         }
         break;
@@ -122,6 +123,38 @@ const LayoutOrchestra: React.FC<LayoutOrchestraProps> = ({
         }
         break;
       }
+      // case "bezier": {
+      //   const cps = cfg.controlPoints ?? [
+      //     [0, 0],
+      //     [100, -100],
+      //     [200, 100],
+      //     [300, 0],
+      //   ];
+      //   const cubic = (
+      //     t: number,
+      //     p0: [number, number],
+      //     p1: [number, number],
+      //     p2: [number, number],
+      //     p3: [number, number],
+      //   ) => {
+      //     const x =
+      //       Math.pow(1 - t, 3) * p0[0] +
+      //       3 * Math.pow(1 - t, 2) * t * p1[0] +
+      //       3 * (1 - t) * Math.pow(t, 2) * p2[0] +
+      //       Math.pow(t, 3) * p3[0];
+      //     const y =
+      //       Math.pow(1 - t, 3) * p0[1] +
+      //       3 * Math.pow(1 - t, 2) * t * p1[1] +
+      //       3 * (1 - t) * Math.pow(t, 2) * p2[1] +
+      //       Math.pow(t, 3) * p3[1];
+      //     return { x, y };
+      //   };
+      //   for (let i = 0; i < count; i++) {
+      //     const t = i / (count - 1);
+      //     pos.push(cubic(t, cps[0], cps[1], cps[2], cps[3]));
+      //   }
+      //   break;
+      // }
       case "bezier": {
         const cps = cfg.controlPoints ?? [
           [0, 0],
@@ -129,28 +162,45 @@ const LayoutOrchestra: React.FC<LayoutOrchestraProps> = ({
           [200, 100],
           [300, 0],
         ];
-        const cubic = (
-          t: number,
-          p0: [number, number],
-          p1: [number, number],
-          p2: [number, number],
-          p3: [number, number],
-        ) => {
+
+        // Internal helper to calculate position and rotation at time 't' (0 to 1)
+        const getCubic = (t: number, p: number[][]) => {
+          const mt = 1 - t;
+
+          // 1. Position formula (The Curve)
           const x =
-            Math.pow(1 - t, 3) * p0[0] +
-            3 * Math.pow(1 - t, 2) * t * p1[0] +
-            3 * (1 - t) * Math.pow(t, 2) * p2[0] +
-            Math.pow(t, 3) * p3[0];
+            Math.pow(mt, 3) * p[0][0] +
+            3 * Math.pow(mt, 2) * t * p[1][0] +
+            3 * mt * Math.pow(t, 2) * p[2][0] +
+            Math.pow(t, 3) * p[3][0];
+
           const y =
-            Math.pow(1 - t, 3) * p0[1] +
-            3 * Math.pow(1 - t, 2) * t * p1[1] +
-            3 * (1 - t) * Math.pow(t, 2) * p2[1] +
-            Math.pow(t, 3) * p3[1];
-          return { x, y };
+            Math.pow(mt, 3) * p[0][1] +
+            3 * Math.pow(mt, 2) * t * p[1][1] +
+            3 * mt * Math.pow(t, 2) * p[2][1] +
+            Math.pow(t, 3) * p[3][1];
+
+          // 2. Derivative formula (The Slope/Tangent)
+          // This calculates the velocity of the curve at point t
+          const dx =
+            3 * Math.pow(mt, 2) * (p[1][0] - p[0][0]) +
+            6 * mt * t * (p[2][0] - p[1][0]) +
+            3 * Math.pow(t, 2) * (p[3][0] - p[2][0]);
+
+          const dy =
+            3 * Math.pow(mt, 2) * (p[1][1] - p[0][1]) +
+            6 * mt * t * (p[2][1] - p[1][1]) +
+            3 * Math.pow(t, 2) * (p[3][1] - p[2][1]);
+
+          // Convert the slope to degrees for Framer Motion
+          const rotate = Math.atan2(dy, dx) * (180 / Math.PI);
+
+          return { x, y, rotate };
         };
+
         for (let i = 0; i < count; i++) {
-          const t = i / (count - 1);
-          pos.push(cubic(t, cps[0], cps[1], cps[2], cps[3]));
+          const t = count > 1 ? i / (count - 1) : 0.5;
+          pos.push(getCubic(t, cps));
         }
         break;
       }

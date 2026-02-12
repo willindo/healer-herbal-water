@@ -21,32 +21,58 @@ const Home = () => {
       {/* <WaterBackground /> */}
       {/* <Water2 /> */}
       <section className="relative  h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 h-full w-full bg-healer-green/10 z-">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, #e0f2fe 0%, #7dd3fc 30%, #0ea5e9 70%, #0369a1 100%)",
+            opacity: 0.9,
+          }}
+        />
+
+        {/* Frost overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.3) 0%, transparent 70%)",
+            mixBlendMode: "overlay",
+          }}
+        />
+
+        {/* <div className="absolute inset-0 h-full w-full bg-healer-green/10 z-">
           <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1540324155974-7523202daa3f?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
-        </div>
+        </div> */}
 
         <div className="relative z-10 text-center px-4">
           <span className="relative z-10 top-24 text-[#d6a60c] uppercase tracking-[0.3em] text-2xl font-medium mb-4 block  animate-pulse ">
             Est. 2024 • Traditional Wisdom
           </span>
-          <LayoutOrchestra
-            layout="arc"
-            config={{
-              radius: 250, // Distance from center point
-              sweep: 160, // Letter spacing (wider angle)
-              angleStep: 4, // Global rotation (4 degrees clockwise)
-            }}
-          >
-            {"Heal Naturally".split("").map((char, i) => (
-              <span key={i} className="text-8xl font-serif z--1 ">
-                {char}
-              </span>
-            ))}
-          </LayoutOrchestra>
+
+          <div className="  -translate-y-3/4 h-20 ">
+            <LayoutOrchestra
+              className=" "
+              layout="bezier"
+              config={{
+                spacing: 110, // Squeezes letters toward the center of the curve
+                controlPoints: [
+                  [-290, 10], // Start
+                  [-70, -70], // Peak
+                  [80, 100], // Valley
+                  [260, 0], // End
+                ],
+              }}
+            >
+              {"Heal Naturally".split("").map((char, i) => (
+                <span key={i} className="text-8xl font-seri  ">
+                  {char}
+                </span>
+              ))}
+            </LayoutOrchestra>
+          </div>
 
           <div className="p-6 space-y-4 flex flex-col ">
             <MotionTextMath
-              as="h1"
               text="Live Fully "
               pattern="lissajous"
               className="text-8xl font-seri -z-10 "

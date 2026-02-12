@@ -2,7 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Target, Compass, Feather, Award } from "lucide-react";
 import AnimatedGradientBg from "../../components/AnimatedGradientBg";
+import LayoutOrchestra from "../../components/LayoutOrchestra";
 
+LayoutOrchestra;
 const Roots = () => {
   return (
     <div className="pt-32 pb-20 bg-healer-cream min-h-screen">
@@ -15,12 +17,29 @@ const Roots = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm font-bold mb-6">
+            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-2xl font-bold mb-6 text-center ">
               Our Story
             </h2>
+            <div className=" translate-y-8 ">
+              <LayoutOrchestra
+                className=" "
+                layout="arc"
+                config={{
+                  radius: 250, // Adjusts the curvature of the arc
+                  sweep: 140, // Degrees of the arc (180 for a half-circle)
+                  angleStep: 2, // Degrees between each letter
+                }}
+              >
+                {"Born from Tradition,".split("").map((char, i) => (
+                  <span key={i} className="text-6xl font-seri  ">
+                    {char}
+                  </span>
+                ))}
+              </LayoutOrchestra>
+            </div>
+
             <h1 className="text-5xl md:text-6xl font-serif text-healer-green leading-tight mb-8">
-              Born from Tradition, <br />
-              <span className="italic">Refined by Science.</span>
+              Refined by Science.
             </h1>
             <p className="text-healer-green/70 text-lg leading-relaxed mb-6">
               Healer started with a simple observation: the ancient wisdom of

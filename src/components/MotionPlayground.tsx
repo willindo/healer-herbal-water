@@ -82,7 +82,7 @@ const patterns: Record<PatternId, PatternFn> = {
     // We use freq for X and a slightly offset multiplier for Y
     return {
       x: Math.sin(time * p.freq + phase) * p.radius,
-      y: Math.cos(time * (p.freq * 0.66) + phase) * p.radius,
+      y: Math.cos(time * (p.freq * 0.22) + phase) * p.radius,
     };
   },
 
