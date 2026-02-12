@@ -5,9 +5,17 @@ import { AnimatedScope } from "../../components/AnimatedScope";
 // import WaterBackground from "../../components/WaterBackGround";
 // import Water2 from "../../components/Water2";
 import { MotionTextMath } from "../../components/MotionTextOrchestra";
+import LayoutOrchestra from "../../components/LayoutOrchestra";
+import { LayoutSwitcher } from "../../components/LayoutSwitcher";
+import { DevConfigPanel1 } from "../../components/ui-tools/DevConfigPanel1";
+import { useResponsiveScale } from "../../configs/useResponsiveScale";
+import { defaultConfigs } from "../../configs/layoutConfigs";
+import { useLayoutConfig } from "../../configs/useLayoutConfig";
+import { arcSpiralSchema } from "../../configs/panelSchemas";
 
-MotionTextMath;
+arcSpiralSchema;
 const Home = () => {
+  const { config, setConfig } = useLayoutConfig("circle");
   return (
     <>
       {/* <WaterBackground /> */}
@@ -18,27 +26,30 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4">
-          <span className="text-[#d6a60c] uppercase tracking-[0.3em] text-lg font-medium mb-4 block  animate-pulse ">
+          <span className="relative z-10 top-24 text-[#d6a60c] uppercase tracking-[0.3em] text-2xl font-medium mb-4 block  animate-pulse ">
             Est. 2024 • Traditional Wisdom
           </span>
-          {/* <h1 className="text-6xl  md:text-8xl  font-serif text-healer-green mb-6 mt-8 tracking-tight leading-tight">
-            Heal Naturally <br />
-          </h1>
-          <hi className="text-6xl  md:text-8xl  font-serif text-healer-green mb-6 mt-8 tracking-tight leading-tight">
-            Live Fully
-          </hi> */}
+          <LayoutOrchestra
+            layout="arc"
+            config={{
+              radius: 250, // Distance from center point
+              sweep: 160, // Letter spacing (wider angle)
+              angleStep: 4, // Global rotation (4 degrees clockwise)
+            }}
+          >
+            {"Heal Naturally".split("").map((char, i) => (
+              <span key={i} className="text-8xl font-serif z--1 ">
+                {char}
+              </span>
+            ))}
+          </LayoutOrchestra>
+
           <div className="p-6 space-y-4 flex flex-col ">
-            <MotionTextMath
-              as="h1"
-              text="Heal Naturally "
-              pattern="chaos"
-              className="text-8xl font-serif  "
-            />
             <MotionTextMath
               as="h1"
               text="Live Fully "
               pattern="lissajous"
-              className="text-8xl font-serif  "
+              className="text-8xl font-seri -z-10 "
             />
             <MotionTextMath
               as="p"

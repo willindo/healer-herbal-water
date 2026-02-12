@@ -37,7 +37,7 @@ const defaults: Required<Params> = {
 type PatternFn = (
   t: number,
   i: number,
-  p: Required<Params>
+  p: Required<Params>,
 ) => {
   x?: number;
   y?: number;
@@ -195,7 +195,7 @@ export default function MotionPlayground({
 
   const params = useMemo<Params>(
     () => ({ freq, amp, radius, phaseGap, speed, angle, growth }),
-    [freq, amp, radius, phaseGap, speed, angle, growth]
+    [freq, amp, radius, phaseGap, speed, angle, growth],
   );
 
   return (
