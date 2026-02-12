@@ -64,7 +64,7 @@ const Home = () => {
               }}
             >
               {"Heal Naturally".split("").map((char, i) => (
-                <span key={i} className="text-8xl font-seri  ">
+                <span key={i} className="text-8xl font-serif  ">
                   {char}
                 </span>
               ))}
