@@ -5,7 +5,7 @@ import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots";
 import Journal from "./pages/Journal/Journal";
 import Profile from "./pages/Profile/Profile";
-import Home from "./pages/Home/home";
+import Home from "./pages/Home/Home";
 function App() {
   return (
     <>

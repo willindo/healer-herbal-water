@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { MousePointer2, Droplets, Leaf, ShieldCheck } from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
@@ -6,12 +5,7 @@ import { AnimatedScope } from "../../components/AnimatedScope";
 // import Water2 from "../../components/Water2";
 import { MotionTextMath } from "../../components/MotionTextOrchestra";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
-import { LayoutSwitcher } from "../../components/LayoutSwitcher";
-import { DevConfigPanel1 } from "../../components/ui-tools/DevConfigPanel1";
-import { useResponsiveScale } from "../../configs/useResponsiveScale";
-import { defaultConfigs } from "../../configs/layoutConfigs";
 import { useLayoutConfig } from "../../configs/useLayoutConfig";
-import { arcSpiralSchema } from "../../configs/panelSchemas";
 import { useMediaQuery } from "../../configs/useMediaQuery";
 
 const Home = () => {
