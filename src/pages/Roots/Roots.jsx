@@ -4,6 +4,7 @@ import { Target, Compass, Feather, Award } from "lucide-react";
 import AnimatedGradientBg from "../../components/AnimatedGradientBg";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
 
+import ResponsiveArcText from "../../components/custome/ResponsiveArcText";
 LayoutOrchestra;
 const Roots = () => {
   return (
@@ -20,25 +21,29 @@ const Roots = () => {
             <h2 className="text-healer-gold uppercase tracking-[0.3em] text-2xl font-bold mb-6 text-center ">
               Our Story
             </h2>
-            <div className=" translate-y-8 ">
+            {/* <div className=" translate-y-8 ">
               <LayoutOrchestra
                 className=" "
                 layout="arc"
                 config={{
-                  radius: 250, // Adjusts the curvature of the arc
-                  sweep: 140, // Degrees of the arc (180 for a half-circle)
+                  radius: 230, // Adjusts the curvature of the arc
+                  sweep: 150, // Degrees of the arc (180 for a half-circle)
                   angleStep: 2, // Degrees between each letter
                 }}
               >
                 {"Born from Tradition,".split("").map((char, i) => (
-                  <span key={i} className="text-6xl font-seri  ">
+                  <span
+                    key={i}
+                    className="text-4xl  md:text-5xl lg:text-6xl font-seri  "
+                  >
                     {char}
                   </span>
                 ))}
               </LayoutOrchestra>
-            </div>
+            </div> */}
+            <ResponsiveArcText />
 
-            <h1 className="text-5xl md:text-6xl font-serif text-healer-green leading-tight mb-8">
+            <h1 className="text-5xl md:text-6xl font-serif text-healer-green leading-tight mb-8 text-center">
               Refined by Science.
             </h1>
             <p className="text-healer-green/70 text-lg leading-relaxed mb-6">
@@ -66,49 +71,54 @@ const Roots = () => {
         </div>
 
         {/* Section 2: Mission & Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <motion.div
-            whileHover={{ y: -5 }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-healer-green text-healer-cream p-12 rounded-3xl shadow-lg"
-          >
-            <Target
-              className="text-healer-gold mb-6 animate-pulse "
-              size={40}
-            />
-            <h3 className="text-3xl font-serif mb-4 italic text-healer-cream">
-              The Mission
-            </h3>
-            <p className="text-healer-cream/80 leading-relaxed tracking-wide text-lg font-ligh">
-              To bridge the gap between ancient herbal wisdom and modern
-              convenience. We craft hydration that doesn't just quench thirst—it
-              restores the soul and purifies the body at a cellular level.
-            </p>
-          </motion.div>
-          <motion.div
-            whileHover={{ y: -5 }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white/50 backdrop-blur-md border border-healer-green/10 p-12 rounded-3xl shadow-lg"
-          >
-            <Compass
-              className="text-healer-gold mb-6 animate-spin "
-              size={40}
-              style={{ animationDuration: "3.0s" }}
-            />
-            <h3 className="text-3xl font-serif text-healer-green mb-4 italic">
-              The Vision
-            </h3>
-            <p className="text-healer-green/70 leading-relaxed text-lg font-ligh tracking-wide ">
-              To lead a global shift toward intentional wellness, where nature’s
-              healing power is an effortless, transparent, and joyful part of
-              every person's daily ritual.
-            </p>
-          </motion.div>
+        <div className="mb-24  bg-gradient-to-t from-[#0369a1] via-[#0ea5e9]/80 to-transparent">
+          <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <motion.div
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 
+                    border border-white/20 shadow-2xl"
+            >
+              <Target
+                className="text-healer-gold mb-6 animate-pulse "
+                size={40}
+              />
+              <h3 className="text-3xl font-serif mb-4 italic text-healer-cream">
+                The Mission
+              </h3>
+              <p className="text-healer-cream/80 leading-relaxed tracking-wide text-lg font-ligh">
+                To bridge the gap between ancient herbal wisdom and modern
+                convenience. We craft hydration that doesn't just quench
+                thirst—it restores the soul and purifies the body at a cellular
+                level.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 
+                    border border-white/20 shadow-2xl"
+            >
+              <Compass
+                className="text-healer-gold mb-6 animate-spin "
+                size={40}
+                style={{ animationDuration: "3.0s" }}
+              />
+              <h3 className="text-3xl font-serif text-healer-green mb-4 italic">
+                The Vision
+              </h3>
+              <p className="text-healer-green/70 leading-relaxed text-lg font-ligh tracking-wide ">
+                To lead a global shift toward intentional wellness, where
+                nature’s healing power is an effortless, transparent, and joyful
+                part of every person's daily ritual.
+              </p>
+            </motion.div>
+          </div>
         </div>
         {/* </AnimatedGradientBg> */}
         {/* Section 3: The Promise */}
@@ -128,6 +138,96 @@ const Roots = () => {
           </p>
         </motion.div>
       </div>
+      <section className="relative overflow-hidden">
+        {/* Sky gradient with atmospheric depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, #e0f2fe 0%, #7dd3fc 30%, #0ea5e9 70%, #0369a1 100%)",
+            opacity: 0.9,
+          }}
+        />
+
+        {/* Frost overlay - ethereal glow */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.3) 0%, transparent 70%)",
+            mixBlendMode: "overlay",
+          }}
+        />
+
+        {/* Diffusion layer - seamless fusion point */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32"
+          style={{
+            background: "linear-gradient(to top, #0369a1, transparent)",
+            opacity: 0.7,
+            mixBlendMode: "multiply",
+          }}
+        />
+
+        {/* Next element - emerging from the gradient */}
+        <div className="relative mt-auto bg-gradient-to-t from-[#0369a1] via-[#0ea5e9]/80 to-transparent">
+          <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <motion.div
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 
+                    border border-white/20 shadow-2xl"
+            >
+              <Target
+                className="text-healer-gold mb-6 animate-pulse "
+                size={40}
+              />
+              <h3 className="text-3xl font-serif mb-4 italic text-healer-cream">
+                The Mission
+              </h3>
+              <p className="text-healer-cream/80 leading-relaxed tracking-wide text-lg font-ligh">
+                To bridge the gap between ancient herbal wisdom and modern
+                convenience. We craft hydration that doesn't just quench
+                thirst—it restores the soul and purifies the body at a cellular
+                level.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 
+                    border border-white/20 shadow-2xl"
+            >
+              <Compass
+                className="text-healer-gold mb-6 animate-spin "
+                size={40}
+                style={{ animationDuration: "3.0s" }}
+              />
+              <h3 className="text-3xl font-serif text-[#13fffd] mb-4 italic">
+                The Vision
+              </h3>
+              <p className="text-[#13fffd] leading-relaxed text-lg font-ligh tracking-wide ">
+                To lead a global shift toward intentional wellness, where
+                nature’s healing power is an effortless, transparent, and joyful
+                part of every person's daily ritual.
+              </p>
+            </motion.div>{" "}
+          </div>
+        </div>
+
+        {/* Optional: Mist particles for ethereal transition */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,255,255,0.2)_0%,_transparent_70%)] 
+                  mix-blend-soft-light"
+          />
+        </div>
+      </section>
     </div>
   );
 };

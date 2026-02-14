@@ -1,4 +1,3 @@
-"use client";
 import React, { ReactNode, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useResponsiveScale } from "../configs/useResponsiveScale";

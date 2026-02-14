@@ -4,9 +4,8 @@ import Footer from "./components/Footer"; // 1. Import Footer
 import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots";
 import Journal from "./pages/Journal/Journal";
-import Profile from "./pages/Pages/Profile";
-import Home from "./pages/Home/Home";
-
+import Profile from "./pages/Profile/Profile";
+import Home from "./pages/Home/home";
 function App() {
   return (
     <>

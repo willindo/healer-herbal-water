@@ -12,10 +12,39 @@ import { useResponsiveScale } from "../../configs/useResponsiveScale";
 import { defaultConfigs } from "../../configs/layoutConfigs";
 import { useLayoutConfig } from "../../configs/useLayoutConfig";
 import { arcSpiralSchema } from "../../configs/panelSchemas";
+import { useMediaQuery } from "../../configs/useMediaQuery";
 
-arcSpiralSchema;
 const Home = () => {
   const { config, setConfig } = useLayoutConfig("circle");
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
+  const isDesktop = useMediaQuery("(min-width: 1025px)");
+
+  const getControlPoints = () => {
+    if (isMobile) {
+      return [
+        [-100, 5], // Flatter curve for mobile
+        [-30, -30],
+        [30, 40],
+        [100, 10],
+      ];
+    } else if (isTablet) {
+      return [
+        [-180, 8],
+        [-50, -50],
+        [60, 70],
+        [180, 5],
+      ];
+    } else {
+      return [
+        [-290, 10],
+        [-70, -70],
+        [80, 100],
+        [260, 0],
+      ];
+    }
+  };
+
   return (
     <>
       {/* <WaterBackground /> */}
@@ -49,22 +78,20 @@ const Home = () => {
             Est. 2024 • Traditional Wisdom
           </span>
 
-          <div className="  -translate-y-3/4 h-20 ">
+          <div className="  -translate-y-3/4 h-20 max-sm:max-w-full ">
             <LayoutOrchestra
               className=" "
               layout="bezier"
               config={{
-                spacing: 110, // Squeezes letters toward the center of the curve
-                controlPoints: [
-                  [-290, 10], // Start
-                  [-70, -70], // Peak
-                  [80, 100], // Valley
-                  [260, 0], // End
-                ],
+                spacing: isMobile ? 60 : isTablet ? 85 : 110,
+                controlPoints: getControlPoints(),
               }}
             >
               {"Heal Naturally".split("").map((char, i) => (
-                <span key={i} className="text-8xl font-serif text-[green] ">
+                <span
+                  key={i}
+                  className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-[green] "
+                >
                   {char}
                 </span>
               ))}
@@ -75,7 +102,7 @@ const Home = () => {
             <MotionTextMath
               text="Live Fully "
               pattern="lissajous"
-              className="text-8xl font-seri -z-10 "
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-seri -z-10 "
             />
             <MotionTextMath
               as="p"
@@ -152,12 +179,10 @@ const Home = () => {
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-healer-green">
+                <h3 className="text-xl font-bold mb-2 text-[#13fffd]">
                   {item.title}
                 </h3>
-                <p className="text-healer-green/70 tracking-wide ">
-                  {item.desc}
-                </p>
+                <p className="text-[#034141cf] tracking-wide ">{item.desc}</p>
               </AnimatedScope>
             </AnimatedScope>
           ))}

@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Globe, Factory, Building2 } from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
+import Circle3D from "../../components/Circle3d";
+import OrbitParent from "../../components/OrbitParent";
 
 const Profile = () => {
   const specs = [
@@ -51,38 +53,36 @@ const Profile = () => {
             with the delicate arts of traditional herbalism.
           </p>
         </motion.div>
-
-        {/* Company Specs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+        {/* <div className="gri  gap-12 mb-32 bg-[green] "> */}
+        <OrbitParent
+          radius={300}
+          // draggable={false}
+          childRotate={true}
+          className=" bg-[purple] "
+        >
+          {/* Company Specs Grid */}
           {specs.map((item, index) => (
-            // <motion.div
-            //   key={index}
-            //   initial={{ opacity: 0, y: 20 }}
-            //   whileInView={{ opacity: 1, y: 0 }}
-            //   transition={{ delay: index * 0.1 }}
-            //   className="flex gap-6 p-8 bg-white/20 border border-healer-green/5 rounded-2xl"
-            // >
             <AnimatedScope
               key={index}
-              className="flex gap-6 p-8 bg-white/20 border border-healer-green/5 rounded-2xl"
+              className="flex flex-col max-w-[40vw] gap-6 p-10 bg-white border border-healer-green/5 rounded-2xl"
               animation="slideLeft"
               once={false}
               stagger={0.7}
             >
-              <div className="text-healer-gold shrink-0">{item.icon}</div>
+              <div className="  text-healer-gold shrink-0">{item.icon}</div>
               <div>
-                <h3 className="text-xl font-bold text-healer-green mb-2">
+                <h3 className=" font-bold text-healer-green mb-2 text-4xl ">
                   {item.title}
                 </h3>
-                <p className="text-healer-green/60 leading-relaxed">
+                <p className="text-healer-green/60 leading-relaxed text-2xl ">
                   {item.desc}
                 </p>
               </div>
             </AnimatedScope>
           ))}
-          {/* // </motion.div> */}
-        </div>
-
+        </OrbitParent>
+        {/* // </motion.div> */}
+        {/* </div> */}
         {/* Registered Details Table */}
         <motion.div
           initial={{ opacity: 0 }}

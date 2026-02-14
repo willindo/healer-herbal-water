@@ -1,4 +1,3 @@
-"use client";
 import React, { ReactNode, ElementType } from "react";
 import { MotionScopeMath } from "./MotionPlayground"; // adjust import
 

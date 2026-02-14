@@ -1,5 +1,3 @@
-"use client";
-
 import React, { CSSProperties, PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 
