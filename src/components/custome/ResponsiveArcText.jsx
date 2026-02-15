@@ -12,7 +12,7 @@ const ResponsiveArcText = () => {
     if (isMobile) {
       return size.width * 0.4; // 30% of parent width for mobile
     }
-    return size.width * 0.45; // % of parent width for larger screens
+    return size.width * 0.4; // 0% of parent width for larger screens
   };
 
   // Calculate responsive sweep based on available space
@@ -32,7 +32,10 @@ const ResponsiveArcText = () => {
   };
 
   return (
-    <div ref={ref} className="w-full h-full  flex justify-center items-center">
+    <div
+      ref={ref}
+      className="w-full h-full z-20 flex justify-center items-center"
+    >
       <LayoutOrchestra
         layout="arc"
         config={{
@@ -40,13 +43,13 @@ const ResponsiveArcText = () => {
           sweep: getSweep(),
           angleStep: getAngleStep(),
           upright: isMobile ? false : true, // Optional: adjust text orientation
-          spacing: isMobile ? 80 : 85, // Letter spacing
+          spacing: isMobile ? 80 : 90, // Letter spacing
         }}
       >
         {"Born from Tradition".split("").map((char, i) => (
           <span
             key={i}
-            className="text-4xl sm:text-6xl  font-serif text-[green]"
+            className="text-4xl  md:text-5xl xl:text-6xl  font-serif text-[green]"
           >
             {char}
           </span>

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Target, Compass, Feather, Award } from "lucide-react";
 import AnimatedGradientBg from "../../components/AnimatedGradientBg";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
-
 import ResponsiveArcText from "../../components/custome/ResponsiveArcText";
+
 LayoutOrchestra;
 const Roots = () => {
   return (
@@ -21,26 +21,6 @@ const Roots = () => {
             <h2 className="text-healer-gold uppercase tracking-[0.3em] text-2xl font-bold mb-6 text-center ">
               Our Story
             </h2>
-            {/* <div className=" translate-y-8 ">
-              <LayoutOrchestra
-                className=" "
-                layout="arc"
-                config={{
-                  radius: 230, // Adjusts the curvature of the arc
-                  sweep: 150, // Degrees of the arc (180 for a half-circle)
-                  angleStep: 2, // Degrees between each letter
-                }}
-              >
-                {"Born from Tradition,".split("").map((char, i) => (
-                  <span
-                    key={i}
-                    className="text-4xl  md:text-5xl lg:text-6xl font-seri  "
-                  >
-                    {char}
-                  </span>
-                ))}
-              </LayoutOrchestra>
-            </div> */}
             <ResponsiveArcText />
 
             <h1 className="text-5xl md:text-6xl font-serif text-healer-green leading-tight mb-8 text-center">
@@ -187,7 +167,7 @@ const Roots = () => {
               <h3 className="text-3xl font-serif mb-4 italic text-healer-cream">
                 The Mission
               </h3>
-              <p className="text-healer-cream/80 leading-relaxed tracking-wide text-lg font-ligh">
+              <p className="text-healer-cream/80 leading-relaxed tracking-wider text-lg font-ligh">
                 To bridge the gap between ancient herbal wisdom and modern
                 convenience. We craft hydration that doesn't just quench
                 thirst—it restores the soul and purifies the body at a cellular
@@ -211,7 +191,7 @@ const Roots = () => {
               <h3 className="text-3xl font-serif text-[#13fffd] mb-4 italic">
                 The Vision
               </h3>
-              <p className="text-[#13fffd] leading-relaxed text-lg font-ligh tracking-wide ">
+              <p className="text-[#13fffd] leading-relaxed text-lg font-ligh tracking-wider ">
                 To lead a global shift toward intentional wellness, where
                 nature’s healing power is an effortless, transparent, and joyful
                 part of every person's daily ritual.

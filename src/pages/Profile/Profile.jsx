@@ -54,40 +54,42 @@ const Profile = () => {
           </p>
         </motion.div>
         {/* <div className="gri  gap-12 mb-32 bg-[green] "> */}
-        <OrbitParent
-          radius={300}
-          // draggable={false}
-          childRotate={true}
-          className=" bg-[purple] "
+        <Circle3D
+          className="h-[400px] w-auto  relative max-w-5xl mx-auto "
+          radius={150}
+          perspective={800}
+          autoRotate={true}
+          speed={0.2}
+          real3D={false}
         >
           {/* Company Specs Grid */}
           {specs.map((item, index) => (
             <AnimatedScope
               key={index}
-              className="flex flex-col max-w-[40vw] gap-6 p-10 bg-white border border-healer-green/5 rounded-2xl"
+              className="flex flex-col max-w-[40vw] gap-6 p-10 bg-[#764f36] border border-healer-green/5 rounded-2xl"
               animation="slideLeft"
               once={false}
               stagger={0.7}
             >
               <div className="  text-healer-gold shrink-0">{item.icon}</div>
               <div>
-                <h3 className=" font-bold text-healer-green mb-2 text-4xl ">
+                <h3 className=" font-bold text-[#3f9ac7] mb-2 text-4xl ">
                   {item.title}
                 </h3>
-                <p className="text-healer-green/60 leading-relaxed text-2xl ">
+                <p className="text-[#64b8cd] leading-relaxed text-2xl ">
                   {item.desc}
                 </p>
               </div>
             </AnimatedScope>
           ))}
-        </OrbitParent>
+        </Circle3D>
         {/* // </motion.div> */}
         {/* </div> */}
         {/* Registered Details Table */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="bg-healer-green text-healer-cream p-10 md:p-16 rounded-[3rem] shadow-2xl overflow-hidden relative"
+          className="bg-[#5c413b] text-healer-cream p-10 md:p-16 rounded-[3rem] shadow-2xl overflow-hidden relative"
         >
           <div className="relative z-10">
             <h3 className="text-3xl font-serif mb-10 italic">
