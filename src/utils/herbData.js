@@ -9,7 +9,7 @@ export const herbs = [
     desc: "Earthy coolness that purifies blood and reduces anxiety." 
   },
   { 
-    id: 2, 
+    id: 8, 
     name: "Krishna Tulsi", 
     benefit: "Immunity & Stress", 
     tag: "Leaf",
@@ -18,7 +18,7 @@ export const herbs = [
     desc: "The 'Queen of Herbs', a powerful adaptogen for mental clarity." 
   },
   { 
-    id: 3, 
+    id: 2, 
     name: "Black Cumin", 
     benefit: "Gut Health", 
     tag: "Seed",
@@ -45,7 +45,7 @@ export const herbs = [
     desc: "Soothes the gastrointestinal tract and reduces bloating." 
   },
   { 
-    id: 6, 
+    id: 3, 
     name: "Cinnamon", 
     benefit: "Metabolism", 
     tag: "Bark",
@@ -63,7 +63,7 @@ export const herbs = [
     desc: "Natural detoxifier known for clearing skin and liver." 
   },
   { 
-    id: 8, 
+    id: 6, 
     name: "Clove", 
     benefit: "Antioxidant", 
     tag: "Bud",
@@ -82,54 +82,3 @@ export const herbs = [
   }
 ];
   // src/utils/herbData.js
-
-export const herbs1 = [
-  {
-    id: 1,
-    name: "Ashwagandha",
-    tag: "Adaptogen",
-    benefit: "Stress Relief & Vitality",
-    desc: "An ancient medicinal herb known for its ability to help the body manage stress and boost brain function.",
-    image: "https://images.unsplash.com/photo-1584017911766-d452b373e74a?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 2,
-    name: "Holy Basil",
-    tag: "Restorative",
-    benefit: "Immune Support",
-    desc: "Considered the 'Queen of Herbs,' Tulsi is revered for its healing powers and ability to promote longevity.",
-    image: "https://images.unsplash.com/photo-1615485242231-01646270438c?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 3,
-    name: "Turmeric Root",
-    tag: "Anti-inflammatory",
-    benefit: "Joint & Gut Health",
-    desc: "A golden root prized for centuries in Ayurvedic medicine for its potent anti-inflammatory properties.",
-    image: "https://images.unsplash.com/photo-1615485500704-8e990f3900f7?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 4,
-    name: "Gotu Kola",
-    tag: "Cognitive",
-    benefit: "Mental Clarity",
-    desc: "Known as the 'herb of longevity,' it is used to sharpen focus and support healthy skin rejuvenation.",
-    image: "https://images.unsplash.com/photo-1599021419847-d8a7a6aba5b4?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 5,
-    name: "Moringa Leaf",
-    tag: "Superfood",
-    benefit: "Nutrient Density",
-    desc: "One of the most nutrient-rich plants on earth, providing a natural surge of energy and antioxidants.",
-    image: "https://images.unsplash.com/photo-1515699596404-4a6914595245?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 6,
-    name: "Saffron",
-    tag: "Mood Booster",
-    benefit: "Emotional Balance",
-    desc: "The world's most precious spice, used to elevate the spirit and promote a sense of inner peace.",
-    image: "https://images.unsplash.com/photo-1502330029706-e757bc43fa61?auto=format&fit=crop&q=80&w=1200",
-  }
-];
