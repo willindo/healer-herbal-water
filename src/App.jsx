@@ -3,14 +3,17 @@ import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // 1. Import Footer
 import Alchemy from "./pages/Alchemy/Alchemy";
-import Roots from "./pages/Roots/Roots";
+import Roots from "./pages/Roots/Roots1";
 import Journal from "./pages/Journal/Journal";
 import Profile from "./pages/Profile/Profile";
 import Home from "./pages/Home/Home";
+import Water2 from "./components/Water2";
+
 function App() {
   return (
     <>
       <Navbar />
+      {/* <Water2 /> */}
       <div className="min-h-screen bg-healer-cream flex flex-col">
         <main className="flex-grow">
           {" "}

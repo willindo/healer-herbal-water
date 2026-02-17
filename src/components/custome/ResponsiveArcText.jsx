@@ -12,7 +12,7 @@ const ResponsiveArcText = () => {
     if (isMobile) {
       return size.width * 0.4; // 30% of parent width for mobile
     }
-    return size.width * 0.4; // 0% of parent width for larger screens
+    return size.width * 0.3; // 0% of parent width for larger screens
   };
 
   // Calculate responsive sweep based on available space
@@ -20,7 +20,7 @@ const ResponsiveArcText = () => {
     if (isMobile) {
       return 180; // Tighter arc for mobile
     }
-    return 160; // Full arc for desktop
+    return 170; // Full arc for desktop
   };
 
   // Adjust angle step to center the text
@@ -34,7 +34,7 @@ const ResponsiveArcText = () => {
   return (
     <div
       ref={ref}
-      className="w-full h-full z-20 flex justify-center items-center"
+      className="w-full h-full z-10 flex justify-center items-center"
     >
       <LayoutOrchestra
         layout="arc"
@@ -46,10 +46,11 @@ const ResponsiveArcText = () => {
           spacing: isMobile ? 80 : 90, // Letter spacing
         }}
       >
-        {"Born from Tradition".split("").map((char, i) => (
+        {"Rooted in Nature".split("").map((char, i) => (
           <span
             key={i}
-            className="text-4xl  md:text-5xl xl:text-6xl  font-serif text-[green]"
+            className="tex-4xl  d:text-5xl l:text-6xl  font-serif text-[green]"
+            style={{ fontSize: "var(--step-14)" }}
           >
             {char}
           </span>

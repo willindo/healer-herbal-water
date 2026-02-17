@@ -43,7 +43,7 @@ const Home = () => {
     <>
       {/* <WaterBackground /> */}
       {/* <Water2 /> */}
-      <section className="relative  h-screen flex items-center justify-center overflow-hidden  border-0 ">
+      <section className="relative   h-[94vh] flex flex-col items-cente justify-around overflow-hidden  border-0 ">
         <div
           className="absolute inset-0"
           style={{
@@ -62,37 +62,38 @@ const Home = () => {
             mixBlendMode: "overlay",
           }}
         />
-
+        {/* className="z-10 fixed bottom-0 w-[70vw] "  */}
         {/* <div className="absolute inset-0 h-full w-full bg-healer-green/10 z-">
           <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1540324155974-7523202daa3f?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
         </div> */}
 
+        <h2
+          className="  z-20 text-[#d6a60c] text-center h-8 uppercase tracking-[0.3em]  font-medium mb-4 block  animate-pulse "
+          style={{ fontSize: "var(--step-11)" }}
+        >
+          Est. 2024 • Traditional Wisdom
+        </h2>
+        <div className=" z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full ">
+          <LayoutOrchestra
+            className=" "
+            layout="bezier"
+            config={{
+              spacing: isMobile ? 60 : isTablet ? 85 : 110,
+              controlPoints: getControlPoints(),
+            }}
+          >
+            {"Heal Naturally".split("").map((char, i) => (
+              <span
+                key={i}
+                className=" text-4xl sm:text-6xl min-[1025px]:text-8xl font-serif text-[green] "
+              >
+                {char}
+              </span>
+            ))}
+          </LayoutOrchestra>
+        </div>
         <div className="relative z-10 text-center px-4">
-          <span className="relative z-10 top-24 text-[#d6a60c] uppercase tracking-[0.3em] text-2xl font-medium mb-4 block  animate-pulse ">
-            Est. 2024 • Traditional Wisdom
-          </span>
-
-          <div className="  -translate-y-3/4 h-20 max-sm:max-w-full ">
-            <LayoutOrchestra
-              className=" "
-              layout="bezier"
-              config={{
-                spacing: isMobile ? 60 : isTablet ? 85 : 110,
-                controlPoints: getControlPoints(),
-              }}
-            >
-              {"Heal Naturally".split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-[green] "
-                >
-                  {char}
-                </span>
-              ))}
-            </LayoutOrchestra>
-          </div>
-
-          <div className="p-6 space-y-4 flex flex-col text-[#08b508] ">
+          <div className="p-6 space-y-4 flex flex-col text-[#9aff9a] ">
             <MotionTextMath
               text="Live Fully "
               pattern="lissajous"

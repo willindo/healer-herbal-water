@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Globe, Factory, Building2 } from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
 import Circle3D from "../../components/Circle3d";
-import OrbitParent from "../../components/OrbitParent";
 
 const Profile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   const specs = [
     {
       icon: <ShieldCheck />,
@@ -29,10 +30,17 @@ const Profile = () => {
     },
   ];
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640); // Tailwind sm
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="pt-32 pb-20 bg-healer-cream min-h-screen">
       <h2 className="text-healer-green text-center text-sm font-bold tracking-widest mb-4">
-        Dubai - ALMAZ100 GLOBAL LLC /\ India - AKMAZ100 GLOBAL Pvt. Ltd --{" "}
+        Dubai - ALMAZ100 GLOBAL LLC / India - AKMAZ100 GLOBAL Pvt. Ltd
       </h2>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
@@ -48,43 +56,65 @@ const Profile = () => {
             Precision in Purity
           </h1>
           <p className="text-healer-green/70 text-lg leading-relaxed">
-            Healer isn't just a beverage; it’s a commitment to botanical
+            Healer isn't just a beverage; it's a commitment to botanical
             integrity. We combine the rigorous standards of modern manufacturing
             with the delicate arts of traditional herbalism.
           </p>
         </motion.div>
-        {/* <div className="gri  gap-12 mb-32 bg-[green] "> */}
-        <Circle3D
-          className="h-[400px] w-auto  relative max-w-5xl mx-auto "
-          radius={150}
-          perspective={800}
-          autoRotate={true}
-          speed={0.2}
-          real3D={false}
-        >
-          {/* Company Specs Grid */}
-          {specs.map((item, index) => (
-            <AnimatedScope
-              key={index}
-              className="flex flex-col max-w-[40vw] gap-6 p-10 bg-[#764f36] border border-healer-green/5 rounded-2xl"
-              animation="slideLeft"
-              once={false}
-              stagger={0.7}
-            >
-              <div className="  text-healer-gold shrink-0">{item.icon}</div>
-              <div>
-                <h3 className=" font-bold text-[#3f9ac7] mb-2 text-4xl ">
-                  {item.title}
-                </h3>
-                <p className="text-[#64b8cd] leading-relaxed text-2xl ">
-                  {item.desc}
-                </p>
-              </div>
-            </AnimatedScope>
-          ))}
-        </Circle3D>
-        {/* // </motion.div> */}
-        {/* </div> */}
+
+        {isMobile ? (
+          <div className="grid grid-cols-1 gap-12 mb-32">
+            {specs.map((item, index) => (
+              <AnimatedScope
+                key={index}
+                className="flex flex-col gap-6 p-10 bg-[#764f36] border border-healer-green/5 rounded-2xl"
+                animation="slideLeft"
+                once={false}
+                stagger={0.7}
+              >
+                <div className="text-healer-gold shrink-0">{item.icon}</div>
+                <div>
+                  <h3 className="font-bold text-[#3f9ac7] mb-2 text-4xl">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#64b8cd] leading-relaxed text-2xl">
+                    {item.desc}
+                  </p>
+                </div>
+              </AnimatedScope>
+            ))}
+          </div>
+        ) : (
+          <Circle3D
+            className="h-[400px] w-auto relative max-w-5xl mx-auto mb-32"
+            radius={150}
+            perspective={800}
+            autoRotate={true}
+            speed={0.2}
+            real3D={false}
+          >
+            {specs.map((item, index) => (
+              <AnimatedScope
+                key={index}
+                className="flex flex-col gap-6 p-10 bg-[#764f36] border border-healer-green/5 rounded-2xl"
+                animation="slideLeft"
+                once={false}
+                stagger={0.7}
+              >
+                <div className="text-healer-gold shrink-0">{item.icon}</div>
+                <div>
+                  <h3 className="font-bold text-[#3f9ac7] mb-2 text-4xl">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#64b8cd] leading-relaxed text-2xl">
+                    {item.desc}
+                  </p>
+                </div>
+              </AnimatedScope>
+            ))}
+          </Circle3D>
+        )}
+
         {/* Registered Details Table */}
         <motion.div
           initial={{ opacity: 0 }}

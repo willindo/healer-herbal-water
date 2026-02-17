@@ -10,6 +10,7 @@ import {
 } from "@babylonjs/core";
 import * as BABYLON from "@babylonjs/core";
 import { WaterMaterial } from "@babylonjs/materials";
+
 function Water2() {
   const canvasRef = useRef(null);
 
@@ -25,7 +26,7 @@ function Water2() {
         BABYLON.Vector3.Zero(),
         scene,
       );
-      camera.attachControl(canvasRef.current, true, false);
+      camera.attachControl(canvasRef.current, true);
 
       var light = new BABYLON.HemisphericLight(
         "light1",
@@ -38,7 +39,7 @@ function Water2() {
       var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
       skyboxMaterial.backFaceCulling = false;
       skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-        "textures/skybox3",
+        "../TropicalSunnyDay/TropicalSunnyDay",
         scene,
       );
       skyboxMaterial.reflectionTexture.coordinatesMode =
@@ -49,8 +50,8 @@ function Water2() {
       skybox.material = skyboxMaterial;
 
       // Ground
-      var groundTexture = new BABYLON.Texture("../grass.dds", scene);
-      groundTexture.vScale = groundTexture.uScale = 8.0;
+      var groundTexture = new BABYLON.Texture("../ground.jpg", scene);
+      groundTexture.vScale = groundTexture.uScale = 4.0;
 
       var groundMaterial = new BABYLON.StandardMaterial(
         "groundMaterial",
@@ -81,15 +82,15 @@ function Water2() {
       var water = new WaterMaterial(
         "water",
         scene,
-        new BABYLON.Vector2(512, 512),
+        new BABYLON.Vector2(1024, 1024),
       );
       water.backFaceCulling = true;
       water.bumpTexture = new BABYLON.Texture("../waterbump.png", scene);
       water.windForce = -5;
-      water.waveHeight = 0.2;
-      water.bumpHeight = 0.05;
-      water.waterColor = new BABYLON.Color3(0.047, 0.23, 0.015);
-      water.colorBlendFactor = 0.5;
+      water.waveHeight = 0.5;
+      water.bumpHeight = 0.1;
+      water.waveLength = 0.1;
+      water.colorBlendFactor = 0;
       water.addToRenderList(skybox);
       water.addToRenderList(ground);
       waterMesh.material = water;
@@ -104,9 +105,7 @@ function Water2() {
     }
   }, []);
 
-  return (
-    <canvas className="w-[7ovw] h-[40vh] -[-1] fixed top-0 " ref={canvasRef} />
-  );
+  return <canvas className="z-10 fixed bottom-0 w-[70vw] " ref={canvasRef} />;
 }
 
 export default Water2;

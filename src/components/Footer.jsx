@@ -132,13 +132,13 @@ const Footer = () => {
           <div className="flex gap-4">
             <a
               href="#"
-              className="p-3 border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
+              className="p-3 text-[#3f9ac7] border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
             >
               <Instagram size={18} />
             </a>
             <a
               href="#"
-              className="p-3 border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
+              className="p-3 text-[#3f9ac7] border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
             >
               <Facebook size={18} />
             </a>
