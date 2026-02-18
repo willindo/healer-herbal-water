@@ -17,7 +17,7 @@ const Alchemy = () => {
             The Healing Formula
           </h2>
           <h1 className="text-5xl md:text-6xl font-serif text-healer-green italic">
-            The Nine Sacred Herbs
+            The Seven Sacred Herbs
           </h1>
           <p className="mt-6 tracking-wide text-lg text-healer-green/70 max-w-2xl mx-auto">
             Meticulously balanced in precise proportions to create a symphony of
