@@ -28,7 +28,11 @@ export default function Navbar() {
               className="text-2xl font-bold tracking-tight text-[#34894c] hover:text-[#71da26] transition-colors"
               onClick={handleLinkClick}
             >
-              HEALER
+              <img
+                src="/ALMAZ100_1.png"
+                alt="HEALER"
+                className="w-10 h md:h- object-cover"
+              />
             </Link>
           </AnimatedScope>
 

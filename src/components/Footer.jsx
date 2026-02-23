@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="space-y-6">
           {/* <h2 className="text-3xl font-bold tracking-tighter italic">HEALER</h2> */}
           <p className="text-healer-cream/60 text-sm leading-relaxed">
-            Revolutionizing hydration through the wisdom of 9 sacred herbs.
+            Revolutionizing hydration through the wisdom of 7 sacred herbs.
             Crafted for the modern seeker.
           </p>
         </div>

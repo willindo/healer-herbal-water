@@ -50,7 +50,7 @@ function Water2() {
       skybox.material = skyboxMaterial;
 
       // Ground
-      var groundTexture = new BABYLON.Texture("../ground.jpg", scene);
+      var groundTexture = new BABYLON.Texture("../ALMAZ100_1.png", scene);
       groundTexture.vScale = groundTexture.uScale = 4.0;
 
       var groundMaterial = new BABYLON.StandardMaterial(
@@ -105,7 +105,9 @@ function Water2() {
     }
   }, []);
 
-  return <canvas className="z-10 fixed bottom-0 w-[70vw] " ref={canvasRef} />;
+  return (
+    <canvas className="z-10 fixed inset-x-auto w-[70vw] " ref={canvasRef} />
+  );
 }
 
 export default Water2;

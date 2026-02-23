@@ -99,16 +99,11 @@ const Home = () => {
               pattern="lissajous"
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-seri -z-10 "
             />
-            <MotionTextMath
-              as="p"
-              text="Animating with MotionTextMath"
-              pattern="pendulum"
-            />
             {/* <MotionTextMath text="Just inline text" />{" "} */}
             {/* defaults to <span> */}
           </div>
-          <p className="max-w-xxl mx-auto text-healer-green/80 text-xl md:text-xxl leading-relaxed mb-10">
-            A refreshing infusion of 9 sacred herbs, crafted to rejuvenate your
+          <p className="max-w-xxl mx-auto text-healer-green/80 text-xl md:text-xxl leading-relaxed mt-20 mb-10">
+            A refreshing infusion of 7 sacred herbs, crafted to rejuvenate your
             body and mind with every conscious sip.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center font-bold">
@@ -127,6 +122,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
+        <img
+          src="../ALMAZ100.png"
+          alt=""
+          className=" mix-blend-color-dodge  "
+        />
+      </div>
       <div className="absolute top-[75px] lef-[50px]  animate-bounce text-[teal]">
         <Droplets size={32} />
       </div>
@@ -142,12 +144,12 @@ const Home = () => {
             {
               icon: <Leaf />,
               title: "100% Herbal",
-              desc: "Pure extracts of 9 traditional herbs. No artificial flavors.",
+              desc: "Pure extracts of 7 traditional herbs. No artificial flavors.",
             },
             {
               icon: <ShieldCheck />,
               title: "Immunity Boost",
-              desc: "Infused with Krishna Tulsi and Black Cumin seeds.",
+              desc: "Infused with Black Cumin seeds, Cardamom and Mace.",
             },
             {
               icon: <MousePointer2 />,

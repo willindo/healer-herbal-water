@@ -81,7 +81,7 @@ const Roots = () => {
                 </p>
                 <p className="text-healer-green/70 text-lg leading-relaxed">
                   We spent years working with traditional herbalists to perfect
-                  a blend of 9 sacred ingredients. Our goal was simple: provide
+                  a blend of 7 sacred ingredients. Our goal was simple: provide
                   cellular hydration that honors the rhythms of nature.
                 </p>
               </div>
