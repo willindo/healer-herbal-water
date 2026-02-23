@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-import { MousePointer2, Droplets, Leaf, ShieldCheck } from "lucide-react";
+import {
+  MousePointer2,
+  Droplets,
+  Leaf,
+  ShieldCheck,
+  Waves,
+} from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
-// import WaterBackground from "../../components/WaterBackGround";
-// import Water2 from "../../components/Water2";
 import { MotionTextMath } from "../../components/MotionTextOrchestra";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
 import { useLayoutConfig } from "../../configs/useLayoutConfig";
@@ -12,38 +16,34 @@ const Home = () => {
   const { config, setConfig } = useLayoutConfig("circle");
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
-  const isDesktop = useMediaQuery("(min-width: 1025px)");
 
   const getControlPoints = () => {
-    if (isMobile) {
+    if (isMobile)
       return [
-        [-100, 5], // Flatter curve for mobile
+        [-100, 5],
         [-30, -30],
         [30, 40],
         [100, 10],
       ];
-    } else if (isTablet) {
+    if (isTablet)
       return [
         [-180, 8],
         [-50, -50],
         [60, 70],
         [180, 5],
       ];
-    } else {
-      return [
-        [-290, 10],
-        [-70, -70],
-        [80, 100],
-        [260, 0],
-      ];
-    }
+    return [
+      [-290, 10],
+      [-70, -70],
+      [80, 100],
+      [260, 0],
+    ];
   };
 
   return (
     <>
-      {/* <WaterBackground /> */}
-      {/* <Water2 /> */}
-      <section className="relative   h-[94vh] flex flex-col items-cente justify-around overflow-hidden  border-0 ">
+      <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 ">
+        {/* Dynamic Water Gradient Background */}
         <div
           className="absolute inset-0"
           style={{
@@ -53,135 +53,114 @@ const Home = () => {
           }}
         />
 
-        {/* Frost overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.3) 0%, transparent 70%)",
-            mixBlendMode: "overlay",
-          }}
-        />
-        {/* className="z-10 fixed bottom-0 w-[70vw] "  */}
-        {/* <div className="absolute inset-0 h-full w-full bg-healer-green/10 z-">
-          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1540324155974-7523202daa3f?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
-        </div> */}
+        {/* Brand & Origin Label */}
+        <div className="z-20 text-center">
+          <h2
+            className="text-[#d6a60c] uppercase tracking-[0.4em] font-bold animate-pulse"
+            style={{ fontSize: "var(--step-0)" }}
+          >
+            ALMAZ100 Presents
+          </h2>
+          <h1 className="text-white/80 tracking-widest text-sm mt-1">
+            EST. 2024 • TRADITIONAL WISDOM
+          </h1>
+        </div>
 
-        <h2
-          className="  z-20 text-[#d6a60c] text-center h-8 uppercase tracking-[0.3em]  font-medium mb-4 block  animate-pulse "
-          style={{ fontSize: "var(--step-11)" }}
-        >
-          Est. 2024 • Traditional Wisdom
-        </h2>
-        <div className=" z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full ">
+        {/* Main "HEALER" Curved Title */}
+        <div className="z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full">
           <LayoutOrchestra
-            className=" "
             layout="bezier"
             config={{
               spacing: isMobile ? 60 : isTablet ? 85 : 110,
               controlPoints: getControlPoints(),
             }}
           >
-            {"Heal Naturally".split("").map((char, i) => (
+            {"HEALER".split("").map((char, i) => (
               <span
                 key={i}
-                className=" text-4xl sm:text-6xl min-[1025px]:text-8xl font-serif text-[green] "
+                className="text-5xl sm:text-7xl min-[1025px]:text-9xl font-serif text-white drop-shadow-lg"
               >
                 {char}
               </span>
             ))}
           </LayoutOrchestra>
         </div>
+
         <div className="relative z-10 text-center px-4">
-          <div className="p-6 space-y-4 flex flex-col text-[#9aff9a] ">
+          <div className="p-6 space-y-4 flex flex-col text-[#9aff9a]">
             <MotionTextMath
-              text="Live Fully "
-              pattern="lissajous"
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-seri -z-10 "
+              text="Premium Herbal Water"
+              patter="lissajous"
+              className="text-2xl sm:text-4xl md:text-5xl font-light italic"
             />
-            {/* <MotionTextMath text="Just inline text" />{" "} */}
-            {/* defaults to <span> */}
           </div>
-          <p className="max-w-xxl mx-auto text-healer-green/80 text-xl md:text-xxl leading-relaxed mt-20 mb-10">
-            A refreshing infusion of 7 sacred herbs, crafted to rejuvenate your
-            body and mind with every conscious sip.
+
+          <p className="max-w-2xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/5 p-4 rounded-lg backdrop-blur-sm">
+            Experience the purity of <strong>Healer</strong>. A refreshing
+            infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
+            rejuvenate your body and mind with every conscious sip.
           </p>
+
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center font-bold">
             <Link
               to="/alchemy"
-              className="bg-healer-green text-healer-cream px-10 py-4 rounded-full hover:bg-opacity-90 transition-all tracking-wide"
+              className="bg-white text-[#0369a1] px-10 py-4 rounded-full hover:bg-opacity-90 transition-all tracking-wide shadow-xl"
             >
-              The Alchemy
+              Discover the Herbs
             </Link>
             <Link
               to="/roots"
-              className="text-healer-green border border-healer-green/30 px-10 py-4 rounded-full hover:bg-healer-green/5 transition-all tracking-wide"
+              className="text-white border border-white/40 px-10 py-4 rounded-full hover:bg-white/10 transition-all tracking-wide"
             >
-              Our Roots
+              ALMAZ100 Story
             </Link>
           </div>
         </div>
       </section>
-      <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
+
+      {/* Floating Product Image with better positioning */}
+      <div className="absolute w-2/12 min-w-[150px] top-[15%] right-[5%] z-30 drop-shadow-2xl">
         <img
           src="../ALMAZ100.png"
-          alt=""
-          className=" mix-blend-color-dodge  "
+          alt="Healer Herbal Water Bottle"
+          className="mix-blend-normal hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="absolute top-[75px] lef-[50px]  animate-bounce text-[teal]">
-        <Droplets size={32} />
-      </div>
-      <section className="pt-16 pb-24 bg-white/30  bg-gradient-to-b from-[#0c74ad] vi-[#0ea5e9]/80 to-transparent">
-        {" "}
+
+      <section className="pt-16 pb-24 bg-gradient-to-b from-[#0369a1] to-[#0ea5e9]">
         <AnimatedScope
           className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
           animation="slideRight"
           once={false}
-          stagger={0.7}
+          stagger={0.2}
         >
           {[
             {
-              icon: <Leaf />,
-              title: "100% Herbal",
-              desc: "Pure extracts of 7 traditional herbs. No artificial flavors.",
+              icon: <Waves />,
+              title: "Sacred Hydration",
+              desc: "The world's first premium bottled water infused with 7 therapeutic botanicals.",
             },
             {
               icon: <ShieldCheck />,
-              title: "Immunity Boost",
-              desc: "Infused with Black Cumin seeds, Cardamom and Mace.",
+              title: "Immunity by ALMAZ",
+              desc: "Powered by Black Cumin, Cardamom, and Mace to fortify your natural defenses.",
             },
             {
-              icon: <MousePointer2 />,
-              title: "Modern Ritual",
-              desc: "Ancient healing wisdom adapted for your busy lifestyle.",
+              icon: <Leaf />,
+              title: "100% Natural",
+              desc: "Zero calories. Zero additives. Just the ancient wisdom of Healer in a bottle.",
             },
           ].map((item, idx) => (
-            <AnimatedScope
-              className=" flex flex-wrap items-center"
-              animation="slideRight"
-              once={false}
-              stagger={0.7}
+            <div
+              key={idx}
+              className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
             >
-              <AnimatedScope
-                key={idx}
-                animation="slideRight"
-                once={false}
-                stagger={0.7}
-                className="flex flex-col gap-5 "
-              >
-                <div
-                  className="flex justify-center mb-4 text-healer-gold animate-ping "
-                  style={{ animationDuration: "3.0s" }}
-                >
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-[#13fffd]">
-                  {item.title}
-                </h3>
-                <p className="text-[#034141cf] tracking-wide ">{item.desc}</p>
-              </AnimatedScope>
-            </AnimatedScope>
+              <div className="text-white animate-pulse">{item.icon}</div>
+              <h3 className="text-xl font-bold text-white uppercase tracking-wider">
+                {item.title}
+              </h3>
+              <p className="text-blue-50 leading-relaxed">{item.desc}</p>
+            </div>
           ))}
         </AnimatedScope>
       </section>
