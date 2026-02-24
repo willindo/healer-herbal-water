@@ -48,13 +48,10 @@ const Roots = () => {
               </h2>
               <ResponsiveArcText />
               <h1
-                className="text-5xl md:text-6xl mt-8 font-serif text-healer-green/70 leading-tight mb-8"
+                className="text-5xl md:text-6xl mt-8 font-serif text-healer-green/70 leading-tight mb-8 text-center"
                 style={{ fontSize: "var(--step-14)" }}
               >
                 Refined by Science, <br />
-                <span className="text-healer-gold italic">
-                  Rooted in Nature
-                </span>
               </h1>
 
               <div className="space-y-6">
