@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   MousePointer2,
@@ -16,6 +17,24 @@ const Home = () => {
   const { config, setConfig } = useLayoutConfig("circle");
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
+
+  // --- Bottle Image Cycling Logic ---
+  const [currentBottle, setCurrentBottle] = useState(0);
+  const bottleImages = [
+    "/assets/bottle/bottle1.png",
+    "/assets/bottle/bottle2.png",
+    "/assets/bottle/bottle3.png",
+    "/assets/bottle/bottle4.png",
+    "/assets/bottle/bottle5.png",
+    "/assets/bottle/bottle6.png",
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBottle((prev) => (prev + 1) % bottleImages.length);
+    }, 4000); // Change every 4 seconds
+    return () => clearInterval(timer);
+  }, [bottleImages.length]);
 
   const getControlPoints = () => {
     if (isMobile)
@@ -42,10 +61,10 @@ const Home = () => {
 
   return (
     <>
-      <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 ">
+      <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
         {/* Dynamic Water Gradient Background */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 transition-colors duration-1000"
           style={{
             background:
               "linear-gradient(180deg, #e0f2fe 0%, #7dd3fc 30%, #0ea5e9 70%, #0369a1 100%)",
@@ -54,19 +73,19 @@ const Home = () => {
         />
 
         {/* Brand & Origin Label */}
-        <div className="z-20 text-center">
+        <div className=" pt-5  z-20 text-center">
           <h2
             className="text-[#d6a60c] uppercase tracking-[0.4em] font-bold animate-pulse"
             style={{ fontSize: "var(--step-0)" }}
           >
             ALMAZ100 Presents
           </h2>
-          <h1 className="text-white/80 tracking-widest text-sm mt-4">
+          {/* <h1 className="text-[#a18020] tracking-widest text-sm mt-4">
             EST. 2024 • TRADITIONAL WISDOM
-          </h1>
+          </h1> */}
         </div>
 
-        {/* Main "HEALER" Curved Title */}
+        {/* Main "HEALER" Curved Title with its own Fade effect */}
         <div className="z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full">
           <LayoutOrchestra
             layout="bezier"
@@ -86,16 +105,34 @@ const Home = () => {
           </LayoutOrchestra>
         </div>
 
-        <div className="relative z-10 text-center px-4">
+        {/* --- Cycling Bottle Display --- */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          {bottleImages.map((src, idx) => (
+            <img
+              key={src}
+              src={src}
+              alt={`Healer Bottle ${idx + 1}`}
+              className={`absolute w-auto h-[50vh] transition-all duration-1000 ease-in-out transform ${
+                idx === currentBottle
+                  ? "opacity-60 scale-110 blur-0 translate-y-0"
+                  : "opacity-0 scale-90 blur-md translate-y-10"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-30 text-center px-4">
           <div className="p-6 space-y-4 flex flex-col text-[#9aff9a]">
+            {/* We use a key here so the animation restarts when the bottle changes */}
             <MotionTextMath
+              key={currentBottle}
               text="Premium Herbal Water"
               pattern="pendulum"
-              className="text-2xl sm:text-4xl md:text-5xl font-light "
+              className="text-2xl sm:text-4xl md:text-5xl font-light drop-shadow-md"
             />
           </div>
 
-          <p className="max-w-2xl mx-auto text-white/90 text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/5 p-4 rounded-lg backdrop-blur-sm">
+          <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
             Experience the purity of <strong>Healer</strong>. A refreshing
             infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
             rejuvenate your body and mind with every conscious sip.
@@ -118,15 +155,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Floating Product Image with better positioning */}
-      <div className="absolute w-2/12 min-w-[150px] top-[5%] sm:top-[15%] max-sm:left-0 sm:right-[5%] z-30 drop-shadow-2xl">
+      {/* Static Logo Branding */}
+      <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
         <img
           src="../ALMAZ100.png"
-          alt="Healer Herbal Water Bottle"
-          className="mix-blend-normal hover:scale-105 transition-transform duration-500"
+          alt=""
+          className=" mix-blend-color-dodge  "
         />
       </div>
-
       <section className="pt-16 pb-24 bg-gradient-to-b from-[#0369a1] to-[#0ea5e9]">
         <AnimatedScope
           className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"

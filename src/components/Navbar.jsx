@@ -1,133 +1,103 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom"; // For SPA navigation
+import { Link, useLocation } from "react-router-dom";
 import { AnimatedScope } from "./AnimatedScope";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { to: "/alchemy", label: "The Alchemy" },
     { to: "/roots", label: "Our Roots" },
     { to: "/journal", label: "The Journal" },
+    { to: "/profile", label: "Profile" },
   ];
 
-  // Close mobile menu when clicking a link
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
+  // Auto-close mobile menu on route change or manual click
+  const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between ">
-          {/* Brand/Logo */}
-          <AnimatedScope animation="fadeRight" delay={0.1}>
-            <Link
-              to="/"
-              className="text-2xl font-bold tracking-tight text-[#34894c] hover:text-[#71da26] transition-colors"
-              onClick={handleLinkClick}
-            >
-              <img
-                src="/ALMAZ100_1.png"
-                alt="HEALER"
-                className="w-10 h md:h- object-cover"
-              />
-            </Link>
-          </AnimatedScope>
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-healer-green/10">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        {/* Brand / Logo */}
+        <AnimatedScope animation="fadeUp" delay={0.1}>
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            onClick={handleLinkClick}
+          >
+            <img
+              src="/ALMAZ100_1.png"
+              alt="ALMAZ100 HEALER"
+              className="h-10 w-auto object-contain hover:scale-105 transition-transform"
+            />
+            <span className="font-serif font-bold text-healer-green tracking-tighter hidden sm:block">
+              HEALER
+            </span>
+          </Link>
+        </AnimatedScope>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            <AnimatedScope
-              className="flex items-center space-x-1"
-              animation="fadeUp"
-              stagger={0.05}
-            >
-              {/* {navLinks.slice(0, 6).map((link) => ( */}
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-[teal] hover:text-[#915333] hover:bg-gray-200/50 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </AnimatedScope>
-
-            {/* Separator and additional links */}
-            <span className="mx-2 text-healer-green">|</span>
-
-            <AnimatedScope
-              className="flex items-center space-x-1"
-              animation="fadeUp"
-              stagger={0.05}
-            >
-              {navLinks.slice(6).map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-[teal] hover:text-[#006666] hover:bg-teal-50 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              {/* Contact Button */}
-              <button className="ml-4 border border-[teal] px-4 py-2 text-xs uppercase tracking-widest font-medium text-[teal] hover:bg-[teal] hover:text-white transition-all duration-300">
-                Contact
-              </button>
-            </AnimatedScope>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#915333] hover:bg-gray-200/50 focus:outline-none transition-colors"
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-            >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatedScope animation="fadeDown" duration={0.2}>
-        <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isOpen
-              ? "max-h-96 opacity-100 visible"
-              : "max-h-0 opacity-0 invisible"
-          }`}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t border-gray-200">
+        {/* Desktop Links - Animates every time they appear */}
+        <div className="hidden md:flex items-center gap-8">
+          <AnimatedScope
+            key={location.pathname} // Forces re-animation on navigation
+            className="flex gap-8"
+            animation="fadeUp"
+            stagger={0.2}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-[#915333] hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
+                className="text-sm uppercase tracking-widest font-medium text-gray-600 hover:text-healer-green transition-colors relative group"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-healer-green transition-all group-hover:w-full" />
               </Link>
             ))}
-
-            {/* Mobile Contact Button */}
-            <div className="pt-4 border-t border-gray-200">
-              <button className="w-full border border-[teal] px-4 py-3 text-sm uppercase tracking-widest font-medium text-[teal] hover:bg-[teal] hover:text-white transition-all duration-300 rounded-md">
-                Contact
-              </button>
-            </div>
-          </div>
+          </AnimatedScope>
         </div>
-      </AnimatedScope>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-healer-green hover:bg-gray-100 rounded-full transition-colors"
+          onClick={() => setIsOpen(!isOpen)} // Fixed logic here
+          aria-label="Toggle menu"
+        >
+          {isOpen ? (
+            <X className="w-7 h-7 animate-in spin-in-90 duration-300" />
+          ) : (
+            <Menu className="w-7 h-7 animate-in fade-in zoom-in duration-300" />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Dropdown - Animated Overlay */}
+      <div
+        className={`fixed inset-0 top-[65px] bg-white z-40 md:hidden transition-all duration-500 ease-in-out ${
+          isOpen
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-full pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center bg-[yellow] justify-center h-full gap-8 pb-20">
+          {isOpen && (
+            <AnimatedScope animation="fadeIn" stagger={0.2}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={handleLinkClick}
+                  className="text-xl font-serif bg-red-500 text-healer-green hover:italic transition-all"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </AnimatedScope>
+          )}
+        </div>
+      </div>
     </nav>
   );
 }
