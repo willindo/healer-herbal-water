@@ -168,7 +168,7 @@ const Home = () => {
           className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
           animation="slideRight"
           once={false}
-          stagger={0.2}
+          stagger={0.7}
         >
           {[
             {
@@ -187,16 +187,26 @@ const Home = () => {
               desc: "Zero calories. Zero additives. Just the ancient wisdom of Healer in a bottle.",
             },
           ].map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
+            <AnimatedScope
+              className=" flex flex-wrap items-center"
+              animation="slideRight"
+              once={false}
+              stagger={0.7}
             >
-              <div className="text-white animate-pulse">{item.icon}</div>
-              <h3 className="text-xl font-bold text-white uppercase tracking-wider">
-                {item.title}
-              </h3>
-              <p className="text-blue-50 leading-relaxed">{item.desc}</p>
-            </div>
+              <AnimatedScope
+                key={idx}
+                animation="slideRight"
+                once={false}
+                stagger={0.7}
+                className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
+              >
+                <div className="text-white animate-pulse">{item.icon}</div>
+                <h3 className="text-xl font-bold text-white uppercase tracking-wider">
+                  {item.title}
+                </h3>
+                <p className="text-blue-50 leading-relaxed">{item.desc}</p>
+              </AnimatedScope>
+            </AnimatedScope>
           ))}
         </AnimatedScope>
       </section>
