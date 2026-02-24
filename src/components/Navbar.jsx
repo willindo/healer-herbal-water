@@ -75,13 +75,13 @@ export default function Navbar() {
 
       {/* Mobile Dropdown - Animated Overlay */}
       <div
-        className={`fixed inset-0 top-[65px] bg-white z-40 md:hidden transition-all duration-500 ease-in-out ${
+        className={`fixed inset-0 top-[65px] b-white z-40 md:hidden transition-all duration-500 ease-in-out ${
           isOpen
             ? "opacity-100 translate-x-0"
             : "opacity-0 translate-x-full pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center bg-[yellow] justify-center h-full gap-8 pb-20">
+        <div className="flex flex-col items-center  justify-center h-full gap-8 pb-20">
           {isOpen && (
             <AnimatedScope animation="fadeIn" stagger={0.2}>
               {navLinks.map((link) => (
@@ -89,7 +89,7 @@ export default function Navbar() {
                   key={link.to}
                   to={link.to}
                   onClick={handleLinkClick}
-                  className="text-xl font-serif bg-red-500 text-healer-green hover:italic transition-all"
+                  className="text-xl font-serif text-healer-green hover:italic transition-all"
                 >
                   {link.label}
                 </Link>
