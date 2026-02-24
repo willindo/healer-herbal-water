@@ -67,7 +67,7 @@ const Home = () => {
           className="absolute inset-0 transition-colors duration-1000"
           style={{
             background:
-              "linear-gradient(180deg, #e0f2fe 0%, #7dd3fc 30%, #0ea5e9 70%, #0369a1 100%)",
+              "linear-gradient(180deg, #e0fef2 0%, #7dfcd3 30%, #0ee9a5 70%, #03a169 100%)",
             opacity: 0.9,
           }}
         />
@@ -105,7 +105,7 @@ const Home = () => {
           </LayoutOrchestra>
         </div> */}
         <h1
-          className="z-50 text-[black] font-bold "
+          className="font-share z-50 text-[black] font-bold "
           style={{ fontSize: "var(--step-14)" }}
         >
           HEALER
@@ -166,10 +166,10 @@ const Home = () => {
         <img
           src="../ALMAZ100.png"
           alt=""
-          className=" mix-blend-color-dodge  "
+          className=" mi-blend-color-dodge animate-pulse "
         />
       </div>
-      <section className="pt-16 pb-24 bg-gradient-to-b from-[#0369a1] to-[#0ea5e9]">
+      <section className="pt-16 pb-24 bg-gradient-to-b from-[#03a169] to-[#39e8b1]">
         <AnimatedScope
           className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
           animation="slideRight"

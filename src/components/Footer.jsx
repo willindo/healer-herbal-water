@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#412f2c]  pt-20 pb-10 px-8">
-      {"HEALER".split("").map((char, i) => {
+      {/* {"HEALER".split("").map((char, i) => {
         const colors = [
           "#FF5733",
           "#33FF57",
@@ -44,7 +44,14 @@ const Footer = () => {
             {char}
           </div>
         );
-      })}
+      })} */}
+      <h1
+        className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
+        style={{ fontSize: "var(--step-12)" }}
+      >
+        HEALER
+      </h1>
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-healer-cream/10 pb-16">
         {/* Brand Column */}
         <div className="space-y-6">
@@ -57,10 +64,10 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3f9ac7]">
+          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3fc79a]">
             Explore
           </h4>
-          <ul className="space-y-4 text-sm text-[#3f9ac7]">
+          <ul className="space-y-4 text-sm text-[#3fc79a]">
             <li>
               <Link
                 to="/alchemy"
@@ -102,10 +109,10 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3f9ac7]">
+          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3fc79a]">
             Contact
           </h4>
-          <ul className="space-y-4 text-sm text-[#3f9ac7]">
+          <ul className="space-y-4 text-sm text-[#3fc79a]">
             <li className="flex items-center gap-3">
               <Phone size={16} className="text-healer-gold" />
               <span>+91 98460 51101</span>
@@ -132,13 +139,13 @@ const Footer = () => {
           <div className="flex gap-4">
             <a
               href="#"
-              className="p-3 text-[#3f9ac7] border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
+              className="p-3 text-[#3fc79a] border border-[#3fc79a] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
             >
               <Instagram size={18} />
             </a>
             <a
               href="#"
-              className="p-3 text-[#3f9ac7] border border-[#3f9ac7] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
+              className="p-3 text-[#3fc79a] border border-[#3fc79a] rounded-full hover:bg-healer-gold hover:border-healer-gold transition-all"
             >
               <Facebook size={18} />
             </a>

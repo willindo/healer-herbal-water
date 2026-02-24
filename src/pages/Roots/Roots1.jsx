@@ -7,9 +7,9 @@ const COLORS = {
   cream: "#faf7f2",
   green: "#1b4d3e",
   gold: "#c6a15b",
-  skyDeep: "#0369a1",
-  skyEnd: "#0ea5e9",
-  skyMid: "#7dd3fc",
+  skyDeep: "#03a169",
+  skyEnd: "#0ee9a5",
+  skyMid: "#7dfcd3",
 };
 
 const Roots = () => {
@@ -32,7 +32,7 @@ const Roots = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-healer-cream">
+    <div className="min-h-screen b-healer-cream bg-[#a1cea1] ">
       {/* Hero Section */}
       <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6 mt-14">
@@ -79,7 +79,7 @@ const Roots = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-sky-100 to-sky-300"
+              className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-green-100 to-green-300"
             >
               {/* Cycling Bottle Images */}
               <div className="absolute inset-0 flex items-center justify-center p-12">

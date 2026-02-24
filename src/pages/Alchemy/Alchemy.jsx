@@ -5,7 +5,7 @@ import { herbs } from "../../utils/herbData";
 
 const Alchemy = () => {
   return (
-    <div className="pt-32 pb-20 px-6 min-h-screen bg-healer-cream">
+    <div className="pt-32 pb-20 px-6 min-h-screen bg-[#799779]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -16,10 +16,10 @@ const Alchemy = () => {
           <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">
             The Healing Formula
           </h2>
-          <h1 className="text-5xl md:text-6xl font-serif text-healer-green italic">
+          <h1 className="text-5xl md:text-6xl font-serif text-[#19c819] italic">
             The Seven Sacred Herbs
           </h1>
-          <p className="mt-6 tracking-wide text-lg text-healer-green/70 max-w-2xl mx-auto">
+          <p className="mt-6 tracking-wide text-lg text-[#1bcfd2] max-w-2xl mx-auto">
             Meticulously balanced in precise proportions to create a symphony of
             restoration.
           </p>
@@ -254,11 +254,11 @@ export function HerbsSection() {
           transition={{ delay: 0.3 }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-healer-green/5 to-healer-gold/5 rounded-3xl p-12 border border-healer-green/10">
-            <h3 className="text-3xl font-serif text-healer-green mb-4">
+          <div className="bg-gradient-to-r from-[white]/5 to-healer-green/5 rounded-3xl p-12 border border-healer-green/10">
+            <h3 className="text-3xl font-serif text-[#09da9b] mb-4">
               Begin Your Healing Journey
             </h3>
-            <p className="text-healer-green/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-[#09da9b] mb-8 max-w-2xl mx-auto">
               Each herb tells a story of ancient healing traditions. Discover
               how these natural wonders can transform your wellbeing.
             </p>

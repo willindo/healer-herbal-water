@@ -6,7 +6,7 @@ import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots1";
 import Journal from "./pages/Journal/Journal";
 import Profile from "./pages/Profile/Profile";
-import Home from "./pages/Home/Home2";
+import Home from "./pages/Home/Home3";
 import Water2 from "./components/Water2";
 
 function App() {
