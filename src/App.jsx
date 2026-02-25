@@ -5,7 +5,7 @@ import Footer from "./components/Footer"; // 1. Import Footer
 import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots1";
 import Journal from "./pages/Journal/Journal";
-import Profile from "./pages/Profile/Profile";
+import Profile from "./pages/Profile/Profile3";
 import Home from "./pages/Home/Home3";
 import Water2 from "./components/Water2";
 
