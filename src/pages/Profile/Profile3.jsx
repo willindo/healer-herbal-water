@@ -88,7 +88,7 @@ const Profile = () => {
               {specs.map((item, index) => (
                 <div
                   key={index}
-                  className="p-8 bg-black text-white rounded-2xl border border-white/10"
+                  className="p-8 bg-[#444] text-white rounded-2xl border border-white/10"
                 >
                   <div className="text-healer-green mb-6">{item.icon}</div>
                   <h3 className="font-serif text-2xl mb-3 italic">
@@ -111,7 +111,7 @@ const Profile = () => {
                 {specs.map((item, index) => (
                   <div
                     key={index}
-                    className="w-[300px] p-8 bg-black text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
+                    className="w-[300px] p-8 bg-[#444] text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
                   >
                     <div className="text-healer-green mb-4">{item.icon}</div>
                     <h3 className="font-serif text-2xl mb-2 italic">
@@ -131,7 +131,7 @@ const Profile = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="bg-black text-white p-10 md:p-20 rounded-[2rem] relative overflow-hidden"
+          className="bg-[#444] text-white p-10 md:p-20 rounded-[2rem] relative overflow-hidden"
         >
           <div className="relative z-10">
             <h3 className="text-4xl font-serif mb-12 italic border-b border-white/10 pb-6">
