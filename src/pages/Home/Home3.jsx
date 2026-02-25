@@ -128,7 +128,7 @@ const Home = () => {
         </div>
 
         <div className="relative z-30 text-center px-4">
-          <div className="p-6 space-y-4 flex flex-col text-[#9aff9a]">
+          <div className="p-6 space-y-4 flex flex-col text-[#017f01]">
             {/* We use a key here so the animation restarts when the bottle changes */}
             <MotionTextMath
               key={currentBottle}

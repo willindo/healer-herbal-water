@@ -254,7 +254,7 @@ export function HerbsSection() {
           transition={{ delay: 0.3 }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-[white]/5 to-healer-green/5 rounded-3xl p-12 border border-healer-green/10">
+          <div className="bg-gradient-to-t from-[white]/5 to-healer-green/5 rounded-3xl p-12 border border-healer-green/10">
             <h3 className="text-3xl font-serif text-[#09da9b] mb-4">
               Begin Your Healing Journey
             </h3>
