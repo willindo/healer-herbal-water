@@ -59,26 +59,22 @@ const Profile = () => {
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-healer-green/40 uppercase font-share tracking-[0.4em] text-xs font-bold mb-4">
-              Corporate Dossier
-            </h2>
-            <h1 className="text-6xl md:text-7xl font-serif text-black leading-tight">
-              Precision in <br />
-              <span className="italic text-healer-green">Purity.</span>
-            </h1>
-          </motion.div>
-          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-black/60 text-lg leading-relaxed border-l border-healer-green/20 pl-8 max-w-md"
+            className="max-w-3xl mb-20"
           >
-            Combining rigorous modern manufacturing with the delicate arts of
-            traditional herbalism to create a new gold standard in hydration.
-          </motion.p>
+            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">
+              Corporate Profile
+            </h2>
+            <h1 className="text-5xl font-serif text-healer-green mb-6 italic">
+              Precision in Purity
+            </h1>
+            <p className="text-healer-green/70 text-lg leading-relaxed">
+              Healer isn't just a beverage; it's a commitment to botanical
+              integrity. We combine the rigorous standards of modern
+              manufacturing with the delicate arts of traditional herbalism.
+            </p>
+          </motion.div>
         </div>
 
         {/* Specs Section: 3D for Desktop, Grid for Mobile */}
@@ -103,10 +99,11 @@ const Profile = () => {
           ) : (
             <div className="py-20 flex justify-center items-center">
               <Circle3D
-                radius={280}
-                perspective={1200}
+                radius={210}
+                perspective={800}
                 autoRotate={true}
                 speed={0.15}
+                real3D={false}
               >
                 {specs.map((item, index) => (
                   <div

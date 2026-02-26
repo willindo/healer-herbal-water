@@ -16,10 +16,10 @@ const Alchemy = () => {
           <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">
             The Healing Formula
           </h2>
-          <h1 className="text-5xl md:text-6xl font-serif text-[#19c819] italic">
+          <h1 className="text-5xl md:text-6xl font-serif text-[#6dd56d] italic">
             The Seven Sacred Herbs
           </h1>
-          <p className="mt-6 tracking-wide text-lg text-[#1bcfd2] max-w-2xl mx-auto">
+          <p className="mt-6 tracking-wide text-lg text-[#ace6d3] max-w-2xl mx-auto">
             Meticulously balanced in precise proportions to create a symphony of
             restoration.
           </p>
@@ -255,10 +255,10 @@ export function HerbsSection() {
           className="mt-20 text-center"
         >
           <div className="bg-gradient-to-t from-[white]/5 to-healer-green/5 rounded-3xl p-12 border border-healer-green/10">
-            <h3 className="text-3xl font-serif text-[#09da9b] mb-4">
+            <h3 className="text-3xl font-serif text-[#ade9d7] mb-4">
               Begin Your Healing Journey
             </h3>
-            <p className="text-[#09da9b] mb-8 max-w-2xl mx-auto">
+            <p className="text-[#b9f2e1] mb-8 max-w-2xl mx-auto">
               Each herb tells a story of ancient healing traditions. Discover
               how these natural wonders can transform your wellbeing.
             </p>

@@ -48,19 +48,19 @@ const Roots = () => {
               </h2>
               <ResponsiveArcText />
               <h1
-                className="text-5xl md:text-6xl mt-8 font-serif text-healer-green/70 leading-tight mb-8 text-center"
+                className="text-5xl md:text-6xl mt-8 font-serif text-[white] leading-tight mb-8 text-center"
                 style={{ fontSize: "var(--step-14)" }}
               >
                 Refined by Science, <br />
               </h1>
 
               <div className="space-y-6">
-                <p className="text-healer-green/70 text-lg leading-relaxed">
+                <p className="text-[white] text-lg leading-relaxed">
                   Healer started with a simple observation: the ancient wisdom
                   of herbal infusions was being lost to the convenience of
                   sugary, artificial beverages.
                 </p>
-                <p className="text-healer-green/70 text-lg leading-relaxed font-medium">
+                <p className="text-[white] text-lg leading-relaxed font-medium">
                   Under the stewardship of <strong>ALMAZ100</strong>, we spent
                   years working with traditional herbalists to perfect a blend
                   of 7 sacred ingredients.

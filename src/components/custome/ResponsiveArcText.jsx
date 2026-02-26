@@ -49,7 +49,7 @@ const ResponsiveArcText = () => {
         {"Rooted in Nature".split("").map((char, i) => (
           <span
             key={i}
-            className="tex-4xl  d:text-5xl l:text-6xl  font-serif text-[green]"
+            className="tex-4xl  d:text-5xl l:text-6xl  font-serif text-[white]"
             style={{ fontSize: "var(--step-14)" }}
           >
             {char}
