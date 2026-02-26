@@ -125,7 +125,7 @@ const Roots = () => {
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(135deg, ${COLORS.skyDeep} 0%, ${COLORS.skyEnd} 50%, ${COLORS.skyMid} 100%)`,
+            background: `linear-gradient(180deg, ${COLORS.skyDeep} 0%, ${COLORS.skyEnd} 50%, ${COLORS.skyMid} 100%)`,
           }}
         />
         <div className="absolute inset-0 bg-black/10" />
