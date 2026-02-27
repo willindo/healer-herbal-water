@@ -45,17 +45,22 @@ const Footer = () => {
           </div>
         );
       })} */}
-      <h1
+      {/* <h1
         className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
         style={{ fontSize: "var(--step-12)" }}
       >
         HEALER
-      </h1>
+      </h1> */}
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-healer-cream/10 pb-16">
         {/* Brand Column */}
         <div className="space-y-6">
-          {/* <h2 className="text-3xl font-bold tracking-tighter italic">HEALER</h2> */}
+          <h1
+            className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
+            style={{ fontSize: "var(--step-12)" }}
+          >
+            HEALER
+          </h1>
           <p className="text-healer-cream/60 text-sm leading-relaxed">
             Revolutionizing hydration through the wisdom of 7 sacred herbs.
             Crafted for the modern seeker.

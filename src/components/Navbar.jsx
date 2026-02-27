@@ -18,8 +18,8 @@ export default function Navbar() {
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-healer-green/10">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <nav className="fixed top-0 w-[100vw] z-50  backdrop-blur-md border-b border-healer-green/10">
+      <div className="ma-w-7xl mx-auto px-6 py-3 flex items-center justify-between  ">
         {/* Brand / Logo */}
         <AnimatedScope animation="fadeUp" delay={0.1}>
           <Link
@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-sm uppercase tracking-widest font-medium text-gray-600 hover:text-healer-green transition-colors relative group"
+                className="text-sm uppercase tracking-widest font-medium text-[#c113e8] hover:text-healer-green transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-healer-green transition-all group-hover:w-full" />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Globe, Factory, Building2, MapPin } from "lucide-react";
 import { AnimatedScope } from "../../components/AnimatedScope";
 import Circle3D from "../../components/Circle3d";
+import TripleFrameCard from "../../components/TripleFrameCard";
 
 const Profile = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -82,18 +83,18 @@ const Profile = () => {
           {isMobile ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {specs.map((item, index) => (
-                <div
+                <TripleFrameCard
                   key={index}
                   className="p-8 bg-[#444] text-white rounded-2xl border border-white/10"
                 >
-                  <div className="text-healer-green mb-6">{item.icon}</div>
+                  <div className="text-[#28a931] mb-6">{item.icon}</div>
                   <h3 className="font-serif text-2xl mb-3 italic">
                     {item.title}
                   </h3>
                   <p className="text-white/60 font-share text-sm leading-relaxed">
                     {item.desc}
                   </p>
-                </div>
+                </TripleFrameCard>
               ))}
             </div>
           ) : (
@@ -106,18 +107,18 @@ const Profile = () => {
                 real3D={false}
               >
                 {specs.map((item, index) => (
-                  <div
+                  <TripleFrameCard
                     key={index}
                     className="w-[300px] p-8 bg-[#444] text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
                   >
-                    <div className="text-healer-green mb-4">{item.icon}</div>
+                    <div className="text-[#45924a] mb-4">{item.icon}</div>
                     <h3 className="font-serif text-2xl mb-2 italic">
                       {item.title}
                     </h3>
                     <p className="text-white/50 font-share text-xs leading-relaxed">
                       {item.desc}
                     </p>
-                  </div>
+                  </TripleFrameCard>
                 ))}
               </Circle3D>
             </div>
@@ -128,9 +129,9 @@ const Profile = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="bg-[#444] text-white p-10 md:p-20 rounded-[2rem] relative overflow-hidden"
+          className="bg-[#444] text-white p-3 md:p-10 rounded-[2rem] relative overflow-hidden"
         >
-          <div className="relative z-10">
+          <TripleFrameCard className="relative z-10 p-8 md:p-10 ">
             <h3 className="text-4xl font-serif mb-12 italic border-b border-white/10 pb-6">
               Operational Matrix
             </h3>
@@ -145,14 +146,14 @@ const Profile = () => {
                 { label: "Digital Enquiries", val: "hello@healerdrink.com" },
               ].map((info, idx) => (
                 <div key={idx} className="group">
-                  <p className="text-healer-green font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
+                  <p className="text-[#28a931] font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
                     {info.label}
                   </p>
                   <p className="text-xl font-share opacity-90">{info.val}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </TripleFrameCard>
 
           {/* Decorative "H" in background */}
           <div className="absolute -bottom-20 -right-10 text-white/[0.03] font-serif text-[30rem] select-none italic pointer-events-none">
