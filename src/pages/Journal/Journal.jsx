@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { articles } from "../../utils/journalData";
+import HerbJournalOverlay from "../../components/HerbJournalOverlay";
 
 const Journal = () => {
   return (
     <div className="pt-32 pb-20 bg-healer-cream min-h-screen px-6">
+      <HerbJournalOverlay />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="mb-20 text-center">

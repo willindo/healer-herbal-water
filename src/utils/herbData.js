@@ -1,6 +1,6 @@
 export const herbs = [
   { 
-    id: 1, 
+    id: "vetiver", 
     name: "Vetiver", 
     benefit: "Detox & Clarity", 
     tag: "Root",
@@ -9,7 +9,7 @@ export const herbs = [
     desc: "Earthy coolness that purifies blood and reduces anxiety." 
   },
   { 
-    id: 2, 
+    id: "black_cumin",
     name: "Black Cumin", 
     benefit: "Gut Health", 
     tag: "Seed",

@@ -2,8 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { herbs } from "../../utils/herbData";
+import HerbJournalOverlay from "../../components/HerbJournalOverlay";
 
 const Alchemy = () => {
+  const [activeHerb, setActiveHerb] = useState(null);
   return (
     <div className="pt-32 pb-20 px-6 min-h-screen bg-[#799779]">
       <div className="max-w-7xl mx-auto">
@@ -24,16 +26,25 @@ const Alchemy = () => {
             restoration.
           </p>
         </motion.div>
+      </div>
+      <div className="relative">
+        <HerbsSection onExplore={(id) => setActiveHerb(id)} />
 
-        {/* Grid */}
-        {/* <HerbsGrid /> */}
-        <HerbsSection />
+        {/* The Overlay sits at the top level of the page */}
+        <AnimatePresence>
+          {activeHerb && (
+            <HerbJournalOverlay
+              selectedHerbId={activeHerb}
+              onClose={() => setActiveHerb(null)}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
 };
 
-export function HerbsSection() {
+export function HerbsSection({ onExplore }) {
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -115,7 +126,10 @@ export function HerbsSection() {
                   <p className="text-white/90 text-base md:text-lg mb-6">
                     {featuredHerb.desc}
                   </p>
-                  <button className="px-8 py-3 bg-white text-healer-green font-semibold rounded-full hover:bg-healer-beige transition-colors">
+                  <button
+                    onClick={() => onExplore(featuredHerb.id)}
+                    className="px-8 py-3 bg-white text-healer-green font-semibold rounded-full hover:bg-healer-beige transition-colors"
+                  >
                     Learn More
                   </button>
                 </div>
@@ -225,7 +239,10 @@ export function HerbsSection() {
                       </svg>
                       Ancient Remedy
                     </span>
-                    <button className="text-healer-gold font-semibold text-sm hover:text-healer-green transition-colors flex items-center">
+                    <button
+                      onClick={() => onExplore(herb.id)}
+                      className="text-healer-gold font-semibold text-sm hover:text-healer-green transition-colors flex items-center"
+                    >
                       Explore
                       <svg
                         className="w-4 h-4 ml-1"
@@ -270,51 +287,6 @@ export function HerbsSection() {
           </div>
         </motion.div>
       </div>
-    </div>
-  );
-}
-export function HerbsGrid() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {herbs.map((herb, index) => (
-        <motion.div
-          key={herb.id}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
-          whileHover={{ y: -10 }}
-          className="group bg-white/40 backdrop-blur-lg border border-healer-green/5 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
-        >
-          {/* Image Container */}
-          <div className="h-48 overflow-hidden relative">
-            <img
-              src={
-                herb.image ||
-                "https://via.placeholder.com/400x300?text=Healer+Herbs"
-              }
-              alt={herb.name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-healer-green/10 group-hover:bg-transparent transition-colors" />
-          </div>
-
-          {/* Content Section */}
-          <div className="p-8">
-            <span className="text-xs uppercase tracking-widest text-healer-gold font-bold">
-              {herb.tag}
-            </span>
-            <h3 className="text-2xl font-serif text-healer-green mt-2 mb-4">
-              {herb.name}
-            </h3>
-            <p className="text-sm font-bold text-healer-green/80 mb-2 underline decoration-healer-gold/30">
-              {herb.benefit}
-            </p>
-            <p className="text-healer-green/60 text-sm leading-relaxed">
-              {herb.desc}
-            </p>
-          </div>
-        </motion.div>
-      ))}
     </div>
   );
 }

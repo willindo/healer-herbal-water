@@ -8,6 +8,7 @@ import Journal from "./pages/Journal/Journal";
 import Profile from "./pages/Profile/Profile3";
 import Home from "./pages/Home/Home3";
 import Water2 from "./components/Water2";
+import HerbJournalOverlay from "./components/HerbJournalOverlay";
 
 function App() {
   return (
