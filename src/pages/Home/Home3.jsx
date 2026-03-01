@@ -61,6 +61,14 @@ const Home = () => {
 
   return (
     <>
+      // Example for your Homepage
+      <Helmet>
+        <title>Healer | Premium Herbal Infused Drinks for Wellness</title>
+        <meta
+          name="description"
+          content="Experience the power of nature with Healer Herbal Drink. Sustainably sourced, naturally refreshing."
+        />
+      </Helmet>
       <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
         {/* Dynamic Water Gradient Background */}
         <div
@@ -159,7 +167,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Static Logo Branding */}
       <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
         <img
