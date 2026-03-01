@@ -18,16 +18,7 @@ export const herbs = [
     desc: "Rich in Thymoquinone to strengthen the immune system." 
   },
   { 
-    id: 3, 
-    name: "Cinnamon", 
-    benefit: "Metabolism", 
-    tag: "Bark",
-    // Matches public/herbs/cinnamon.png
-    image: "/herbs/cinnamon.png",
-    desc: "Regulates blood sugar and boosts heart health." 
-  },
-  { 
-    id: 4, 
+    id: "mace", 
     name: "Mace", 
     benefit: "Circulation", 
     tag: "Spice",
@@ -36,7 +27,7 @@ export const herbs = [
     desc: "Adds a delicate aroma while supporting respiratory health." 
   },
   { 
-    id: 5, 
+    id: "cardamom", 
     name: "Cardamom", 
     benefit: "Digestive Aid", 
     tag: "Pod",
@@ -45,7 +36,7 @@ export const herbs = [
     desc: "Soothes the gastrointestinal tract and reduces bloating." 
   },
   { 
-    id: 6, 
+    id: "cloves", 
     name: "Cloves", 
     benefit: "Antioxidant", 
     tag: "Bud",
@@ -53,7 +44,16 @@ export const herbs = [
     desc: "A potent source of minerals to combat oxidative stress." 
   },
   { 
-    id: 7, 
+    id: "cinnamon", 
+    name: "Cinnamon", 
+    benefit: "Metabolism", 
+    tag: "Bark",
+    // Matches public/herbs/cinnamon.png
+    image: "/herbs/cinnamon.png",
+    desc: "Regulates blood sugar and boosts heart health." 
+  },
+  { 
+    id: "sarsaparilla", 
     name: "Sarsaparilla", 
     benefit: "Skin Purifier", 
     tag: "Root",

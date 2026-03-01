@@ -40,7 +40,7 @@ const Profile = () => {
   return (
     <div className="pt-32 pb-20 bg-healer-cream min-h-screen">
       <h2 className="text-healer-green text-center text-sm font-bold tracking-widest mb-4">
-        Dubai - ALMAZ100 GLOBAL LLC / India - AKMAZ100 GLOBAL Pvt. Ltd
+        Dubai - ALMAZ100 GLOBAL LLC / India - ALMAZ100 GLOBAL Pvt. Ltd
       </h2>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}

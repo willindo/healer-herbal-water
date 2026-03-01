@@ -6,33 +6,141 @@ const herbDetails = {
     name: "Vetiver",
     scientific: "Chrysopogon zizanioides",
     alias: "The Oil of Tranquility",
-    origin: "Tropical India",
+    origin: "Tropical India (Khus)",
     essence: "Earth / Cooling / Grounding",
     description:
-      "Known as 'Khus', Vetiver is a perennial grass with a deep, complex root system. In HEALER, it acts as a natural body coolant and emotional anchor.",
+      "A sacred perennial grass with deep, tenacious roots. Vetiver acts as a powerful thermal regulator and emotional anchor, pulling 'excess heat' from both the physical body and the restless mind.",
     benefits: [
-      "Reduces Core Body Heat",
-      "Supports Neural Calm",
-      "Natural Antioxidant",
+      "Thermal Regulation: Naturally lowers core body temperature and reduces inflammation.",
+      "Neural Restoration: Soothes the nervous system to alleviate anxiety and mental fatigue.",
+      "Hormonal Equilibrium: Traditionally used to support rhythmic balance and soothe cycles.", // The refined period claim
+      "Digestive Harmony: Acts as an alkalizer to relieve dehydration-induced constipation.",
+      "Cellular Shield: Rich in antioxidants that scavenge free radicals and slow oxidative stress.",
     ],
     alchemy:
-      "Steam-distilled at low temperatures to preserve the volatile earthy molecules.",
+      "Slow steam-distillation of the aged root fibers to capture the dense, grounding sesquiterpenes.",
+    clinicalNotes:
+      "Traditionally used in Ayurveda as a natural refrigerant and blood purifier to balance Pitta dosha.",
   },
   black_cumin: {
     name: "Black Cumin",
-    scientific: "Nigella Sativa",
+    scientific: "Nigella sativa",
     alias: "The Seed of Blessing",
-    origin: "Mediterranean / Western Asia",
-    essence: "Pungent / Restorative / Warm",
+    origin: "Southwest Asia & Mediterranean",
+    essence: "Warm / Piquant / Restorative",
     description:
-      "Historically claimed to be 'a cure for everything but death,' these obsidian seeds house Thymoquinone, a potent bioactive compound.",
+      "Anciently referred to as 'Kalonji,' these matte-black seeds are prized for their high concentration of Thymoquinone. In our Alchemy blend, it acts as the 'immune-architect,' reinforcing the body's natural defenses while soothing systemic heat.",
     benefits: [
-      "Immune System Modulation",
-      "Respiratory Support",
-      "Digestive Catalyst",
+      "Immune Architecture: A nutrient-dense source of Vitamins A, C, E, and K to fortify the white blood cell response.",
+      "Glycemic Regulation: Traditionally used in Ayurveda to prevent sudden blood sugar spikes and reduce associated fatigue.",
+      "Selective Anti-Inflammatory: Contains Thymoquinone, which targets chronic inflammation without suppressing the natural immune flow.",
+      "Cognitive Longevity: Provides neuroprotective properties that support memory retention and mental sharpness.",
+      "Digestive Fortitude: High dietary fiber content helps stabilize the gut microbiome and supports liver detoxification.",
     ],
     alchemy:
-      "Cold-pressed extraction to ensure zero loss of the delicate Thymoquinone oils.",
+      "Cold-pressed or lightly toasted to activate the volatile oils without degrading the delicate crystalline Thymoquinone molecules.",
+    clinicalNotes:
+      "Regarded in historical texts as a 'panacea' for its ability to address both metabolic and respiratory vitality.",
+  },
+  mace: {
+    name: "Mace",
+    scientific: "Myristica fragrans",
+    alias: "The Golden Veil",
+    origin: "Banda Islands (The Spice Islands)",
+    essence: "Warm / Aromatic / Kinetic",
+    description:
+      "The delicate, lacy aril that encompasses the nutmeg seed. Mace is a kinetic spice in our Alchemy blend, acting as a catalyst that stimulates blood flow and clears the respiratory pathways with its sophisticated, warm aroma.",
+    benefits: [
+      "Micro-circulatory Support: Enhances systemic blood flow, promoting vibrant skin, hair health, and efficient nutrient transport.",
+      "Renal Filtration: Contains compounds that support the kidneys in preventing the formation of mineral deposits and stones.",
+      "Oral Bio-Protection: A natural antibacterial agent that targets breath-neutralizing bacteria and supports gum resilience.",
+      "Respiratory Clarity: Traditionally used to clear congestion and soothe the delicate tissues of the throat.",
+      "Mineral Catalyst: A potent source of Manganese, Copper, and Zinc, essential for cellular repair and metabolic enzyme function.",
+    ],
+    alchemy:
+      "Hand-peeled and sun-dried until the crimson 'blades' turn a deep amber, concentrating its ethereal oils.",
+    clinicalNotes:
+      "In traditional medicine, Mace is prized for its ability to 'invigorate the blood' without over-stimulating the heart.",
+  },
+  cardamom: {
+    name: "Cardamom",
+    scientific: "Elettaria cardamomum",
+    alias: "The Queen of Spices",
+    origin: "The Western Ghats, India",
+    essence: "Cool / Floral / Uplifting",
+    description:
+      "A prized green pod containing volatile aromatic seeds. Cardamom is the 'harmonizer' of the digestive system, using its cooling pungency to settle the stomach and clarify the mind by flushing out systemic stagnation.",
+    benefits: [
+      "Fluid Equilibrium: Acts as a natural diuretic to help regulate blood pressure and reduce water retention around vital organs.",
+      "Gastric Protection: Traditionally used to soothe acid reflux and reinforce the stomach lining against discomfort and ulcers.",
+      "Oral Purification: Rich in cineole, a potent antimicrobial that neutralizes palate bacteria and refreshes breath naturally.",
+      "Cortisol Moderation: Helps the body manage stress by lowering cortisol levels and promoting expansive, easy breathing.",
+      "Antioxidant Detox: Facilitates the expulsion of toxins through the renal system, purifying the blood and brightening the complexion.",
+    ],
+    alchemy:
+      "Pods are harvested by hand and slow-dried to lock in the essential oils within the dark inner seeds.",
+    clinicalNotes:
+      "In Ayurveda, Cardamom is known as 'Ela,' a sattvic spice that clears the senses and lightens the heaviness of digestion.",
+  },
+  cloves: {
+    name: "Cloves",
+    scientific: "Syzygium aromaticum",
+    alias: "The Flower of Immortality",
+    origin: "Maluku Islands, Indonesia",
+    essence: "Spicy / Piercing / Vitalizing",
+    description:
+      "The sun-dried flower buds of the evergreen clove tree. Cloves are an antioxidant powerhouse, containing the highest ORAC (Oxygen Radical Absorbance Capacity) value of any spice, making them essential for cellular defense and metabolic heat.",
+    benefits: [
+      "Oxidative Shield: Loaded with Eugenol, a natural antioxidant that neutralizes free radicals and prevents cellular aging.",
+      "Metabolic Balance: Contains Nigericin, which helps the body’s cells utilize insulin more effectively to stabilize blood sugar.",
+      "Cellular Integrity: Supports the body's natural ability to eliminate damaged cells and prevent systemic inflammation.",
+      "Kinetic Warmth: Enhances micro-circulation and blood flow, helping to regulate body temperature and metabolic speed.",
+      "Vital Purification: Acts as a powerful blood purifier and stress-reliever, clearing the lymphatic system of stagnant toxins.",
+    ],
+    alchemy:
+      "Harvested exactly when the green buds turn a soft pink, then sun-dried until they reach a dark, resinous brown.",
+    clinicalNotes:
+      "Known in traditional medicine as a 'hot' spice that Kindles Agni (digestive fire) and clears 'Amavisha' (internal toxins).",
+  },
+  cinnamon: {
+    name: "Cinnamon",
+    scientific: "Cinnamomum verum",
+    alias: "The Eternal Bark",
+    origin: "Sri Lanka (Ceylon)",
+    essence: "Sweet / Woody / Warming",
+    description:
+      "Harvested from the inner bark of evergreen trees, Cinnamon is a master metabolic regulator. In our Alchemy blend, it acts as a 'thermal bridge,' helping the body process sugars efficiently while shielding the nervous system from oxidative decay.",
+    benefits: [
+      "Glycemic Mimicry: Contains compounds that mimic insulin to help cells absorb glucose, potentially reducing post-meal sugar spikes by 10-29%.",
+      "Neural Longevity: Helps inhibit the buildup of 'Tau' proteins in the brain, supporting long-term cognitive health and clarity.",
+      "Biotic Shield: Rich in Cinnamaldehyde, a potent agent that fights fungal and bacterial infections while protecting dental health.",
+      "Polyphenol Powerhouse: Loaded with high-capacity antioxidants that protect the heart and arteries from oxidative stress.",
+      "Metabolic Ignition: Naturally warms the body’s core to improve digestion and speed up the elimination of systemic waste.",
+    ],
+    alchemy:
+      "The delicate inner bark is hand-rolled into 'quills' and air-dried to preserve its complex, sweet essential oils.",
+    clinicalNotes:
+      "Ceylon Cinnamon (True Cinnamon) is preferred in alchemy for its ultra-low coumarin content and superior aromatic profile.",
+  },
+  sarsaparilla: {
+    name: "Sarsaparilla",
+    scientific: "Hemidesmus indicus",
+    alias: "The Eternal Root",
+    origin: "South Asia / Central America",
+    essence: "Sweet / Cooling / Fluid",
+    description:
+      "A slender, aromatic root known for its distinctive vanilla-like fragrance. Sarsaparilla is the ultimate 'Blood Purifier' in our Alchemy blend, acting as a natural magnet for systemic toxins while shielding the skin’s structural integrity from the inside out.",
+    benefits: [
+      "Dermal Preservation: Actively protects collagen production and inhibits oxidative damage caused by UV exposure for resilient, youthful skin.",
+      "Systemic Cooling: Suppresses key inflammatory markers (TNF-alpha and IL-6) to soothe the body’s internal 'heat' and irritation.",
+      "Joint Mobility: Traditionally used to reduce swelling and discomfort associated with gout and rheumatoid conditions by flushing excess uric acid.",
+      "Cellular Signaling Defense: Contains saponins that help regulate healthy cell growth and inhibit the signaling pathways of damaged cells.",
+      "Hepatic Detoxification: Supports the liver in filtering the bloodstream, leading to clearer skin and increased metabolic clarity.",
+    ],
+    alchemy:
+      "The woody roots are crushed to release their cooling saponins and then cold-steeped to preserve their delicate, sweet aromatic profile.",
+    clinicalNotes:
+      "In Ayurveda, it is known as 'Sariva,' the premier herb for balancing Pitta and clearing heat-related skin conditions.",
   },
 };
 

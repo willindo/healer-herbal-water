@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-sm uppercase tracking-widest font-medium text-[#c113e8] hover:text-healer-green transition-colors relative group"
+                className="text-sm uppercase tracking-widest font-medium text-[#c113e8] hover:text-healer-green ransition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-healer-green transition-all group-hover:w-full" />
