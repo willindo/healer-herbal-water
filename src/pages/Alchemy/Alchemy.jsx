@@ -8,6 +8,11 @@ const Alchemy = () => {
   const [activeHerb, setActiveHerb] = useState(null);
   return (
     <div className="pt-32 pb-20 px-6 min-h-screen bg-[#799779]">
+      <title>The Alchemy of Healer | Natural Ingredient Science</title>
+      <meta
+        name="description"
+        content="Explore the botanical science behind Healer. From adaptogens to ancient herbs, discover how our alchemy creates the perfect wellness drink."
+      />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
