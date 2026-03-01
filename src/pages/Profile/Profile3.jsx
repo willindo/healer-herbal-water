@@ -51,12 +51,12 @@ const Profile = () => {
           </span>
           <div className="h-px w-8 bg-white/20 hidden md:block"></div>
           <span className="flex items-center gap-2">
-            <MapPin size={12} /> India: AKMAZ100 GLOBAL Pvt. Ltd
+            <MapPin size={12} /> India: ALMAZ100 GLOBAL Pvt. Ltd
           </span>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-2 md:px-6 ">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
           <motion.div

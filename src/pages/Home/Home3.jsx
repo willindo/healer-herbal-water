@@ -80,6 +80,15 @@ const Home = () => {
           >
             ALMAZ100 Presents
           </h2>
+          <div className="p-6 space-y-4 flex flex-col text-[#017f01]">
+            {/* We use a key here so the animation restarts when the bottle changes */}
+            <MotionTextMath
+              key={currentBottle}
+              text="Herbal Water"
+              pattern="pendulum"
+              className="text-2xl sm:text-4xl md:text-5xl font-light drop-shadow-md"
+            />
+          </div>
           {/* <h1 className="text-[#a18020] tracking-widest text-sm mt-4">
             EST. 2024 • TRADITIONAL WISDOM
           </h1> */}
@@ -105,7 +114,7 @@ const Home = () => {
           </LayoutOrchestra>
         </div> */}
         <h1
-          className="font-share z-50 text-[black] font-bold "
+          className="w-[70vw] font-share z-50 text-[black] font-bold "
           style={{ fontSize: "var(--step-14)" }}
         >
           HEALER
@@ -128,16 +137,6 @@ const Home = () => {
         </div>
 
         <div className="relative z-30 text-center px-4">
-          <div className="p-6 space-y-4 flex flex-col text-[#017f01]">
-            {/* We use a key here so the animation restarts when the bottle changes */}
-            <MotionTextMath
-              key={currentBottle}
-              text="Herbal Water"
-              pattern="pendulum"
-              className="text-2xl sm:text-4xl md:text-5xl font-light drop-shadow-md"
-            />
-          </div>
-
           <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
             Experience the purity of <strong>Healer</strong>. A refreshing
             infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
@@ -180,17 +179,17 @@ const Home = () => {
             {
               icon: <Waves />,
               title: "Sacred Hydration",
-              desc: "The world's first premium bottled water infused with 7 therapeutic botanicals.",
+              desc: "A silken pour of 7 rare blooms and spices. More than water—it’s an ethereal fragrance you can drink, refreshing the soul and leaving a hauntingly beautiful trail on your palate",
             },
             {
               icon: <ShieldCheck />,
               title: "Immunity by ALMAZ",
-              desc: "Powered by Black Cumin, Cardamom, and Mace to fortify your natural defenses.",
+              desc: "Deep, soul-warming notes of Black Cumin and Cardamom. A perfumed strength that guards your body, releasing a refreshing, spiced mist on your palate with every sip.",
             },
             {
               icon: <Leaf />,
               title: "100% Natural",
-              desc: "Zero calories. Zero additives. Just the ancient wisdom of Healer in a bottle.",
+              desc: "Pure, petal-soft hydration. Zero calories, zero additives—just the intoxicating aroma of ancient healing captured in a bottle.",
             },
           ].map((item, idx) => (
             <AnimatedScope

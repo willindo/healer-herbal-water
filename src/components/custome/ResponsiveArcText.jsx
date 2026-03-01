@@ -42,7 +42,7 @@ const ResponsiveArcText = () => {
           radius: getRadius(),
           sweep: getSweep(),
           angleStep: getAngleStep(),
-          upright: isMobile ? false : true, // Optional: adjust text orientation
+          // upright: isMobile ? false : true, // Optional: adjust text orientation
           spacing: isMobile ? 80 : 90, // Letter spacing
         }}
       >
