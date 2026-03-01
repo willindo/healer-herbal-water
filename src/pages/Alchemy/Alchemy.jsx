@@ -7,45 +7,47 @@ import HerbJournalOverlay from "../../components/HerbJournalOverlay";
 const Alchemy = () => {
   const [activeHerb, setActiveHerb] = useState(null);
   return (
-    <div className="pt-32 pb-20 px-6 min-h-screen bg-[#799779]">
+    <>
       <title>The Alchemy of Healer | Natural Ingredient Science</title>
       <meta
         name="description"
         content="Explore the botanical science behind Healer. From adaptogens to ancient herbs, discover how our alchemy creates the perfect wellness drink."
       />
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">
-            The Healing Formula
-          </h2>
-          <h1 className="text-5xl md:text-6xl font-serif text-[#6dd56d] italic">
-            The Seven Sacred Herbs
-          </h1>
-          <p className="mt-6 tracking-wide text-lg text-[#ace6d3] max-w-2xl mx-auto">
-            Meticulously balanced in precise proportions to create a symphony of
-            restoration.
-          </p>
-        </motion.div>
-      </div>
-      <div className="relative">
-        <HerbsSection onExplore={(id) => setActiveHerb(id)} />
+      <div className="pt-32 pb-20 px-6 min-h-screen bg-[#799779]">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">
+              The Healing Formula
+            </h2>
+            <h1 className="text-5xl md:text-6xl font-serif text-[#6dd56d] italic">
+              The Seven Sacred Herbs
+            </h1>
+            <p className="mt-6 tracking-wide text-lg text-[#ace6d3] max-w-2xl mx-auto">
+              Meticulously balanced in precise proportions to create a symphony
+              of restoration.
+            </p>
+          </motion.div>
+        </div>
+        <div className="relative">
+          <HerbsSection onExplore={(id) => setActiveHerb(id)} />
 
-        {/* The Overlay sits at the top level of the page */}
-        <AnimatePresence>
-          {activeHerb && (
-            <HerbJournalOverlay
-              selectedHerbId={activeHerb}
-              onClose={() => setActiveHerb(null)}
-            />
-          )}
-        </AnimatePresence>
+          {/* The Overlay sits at the top level of the page */}
+          <AnimatePresence>
+            {activeHerb && (
+              <HerbJournalOverlay
+                selectedHerbId={activeHerb}
+                onClose={() => setActiveHerb(null)}
+              />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
