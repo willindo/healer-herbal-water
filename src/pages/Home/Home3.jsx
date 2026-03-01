@@ -63,13 +63,16 @@ const Home = () => {
   return (
     <>
       // Example for your Homepage
-      <Helmet>
-        <title>Healer | Premium Herbal Infused Drinks for Wellness</title>
-        <meta
-          name="description"
-          content="Experience the power of nature with Healer Herbal Drink. Sustainably sourced, naturally refreshing."
-        />
-      </Helmet>
+      <title>Healer | Premium Herbal Infused Water & Wellness</title>
+      <meta
+        name="description"
+        content="Discover Healer: The ultimate herbal-infused water crafted for natural hydration, energy, and holistic wellness. Sustainably sourced."
+      />
+      <meta property="og:title" content="Healer | Premium Herbal Water" />
+      <meta
+        property="og:description"
+        content="Natural hydration meets ancient herbal wisdom."
+      />
       <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
         {/* Dynamic Water Gradient Background */}
         <div
