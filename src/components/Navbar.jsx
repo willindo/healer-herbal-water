@@ -5,7 +5,7 @@ import { AnimatedScope } from "./AnimatedScope";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
 
   const navLinks = [
     { to: "/alchemy", label: "The Alchemy" },

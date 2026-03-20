@@ -5,53 +5,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#412f2c]  pt-20 pb-10 px-8">
-      {/* {"HEALER".split("").map((char, i) => {
-        const colors = [
-          "#FF5733",
-          "#33FF57",
-          "#3357FF",
-          "#FF33F5",
-          "#33FFF5",
-          "#F5FF33",
-          "#FF8333",
-          "#8333FF",
-          "#33FF83",
-          "#FF3380",
-        ];
-        const distinctColor = colors[i % colors.length];
-        // each item is +20px wider and +10px taller
-        const width = 20 + i * 10;
-        const height = 20 + i * 10;
-        const fontSize = 20 + i * 5;
-
-        return (
-          <div
-            key={i}
-            style={{
-              width,
-              height,
-              fontSize,
-              // background: distinctColor,
-              color: distinctColor,
-              textAlign: "center",
-              // borderRadius: "50%",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "2px",
-            }}
-          >
-            {char}
-          </div>
-        );
-      })} */}
-      {/* <h1
-        className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
-        style={{ fontSize: "var(--step-12)" }}
-      >
-        HEALER
-      </h1> */}
-
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-healer-cream/10 pb-16">
         {/* Brand Column */}
         <div className="space-y-6">

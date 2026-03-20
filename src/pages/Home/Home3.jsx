@@ -61,7 +61,6 @@ const Home = () => {
 
   return (
     <>
-      // Example for your Homepage
       <title>Healer | Premium Herbal Infused Water & Wellness</title>
       <meta
         name="description"
@@ -72,17 +71,16 @@ const Home = () => {
         property="og:description"
         content="Natural hydration meets ancient herbal wisdom."
       />
-      <section className="relative h-[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
+      <section className="relative -[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
         {/* Dynamic Water Gradient Background */}
-        <div
+        {/* <div
           className="absolute inset-0 transition-colors duration-1000"
           style={{
             background:
               "linear-gradient(180deg, #e0fef2 0%, #7dfcd3 30%, #0ee9a5 70%, #03a169 100%)",
             opacity: 0.9,
           }}
-        />
-
+        /> */}
         {/* Brand & Origin Label */}
         <div className=" pt-5  z-20 text-center">
           <h2
@@ -91,85 +89,64 @@ const Home = () => {
           >
             ALMAZ100 Presents
           </h2>
-          <div className="p-6 space-y-4 flex flex-col text-[#017f01]">
-            {/* We use a key here so the animation restarts when the bottle changes */}
-            <MotionTextMath
-              key={currentBottle}
-              text="Herbal Water"
-              pattern="pendulum"
-              className="text-2xl sm:text-4xl md:text-5xl font-light drop-shadow-md"
-            />
-          </div>
+          <div className="p-6 space-y-4 flex flex-col text-[#017f01]"></div>
           {/* <h1 className="text-[#a18020] tracking-widest text-sm mt-4">
             EST. 2024 • TRADITIONAL WISDOM
-          </h1> */}
+            </h1> */}
         </div>
 
-        {/* Main "HEALER" Curved Title with its own Fade effect */}
-        {/* <div className="z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full">
-          <LayoutOrchestra
-            layout="bezier"
-            config={{
-              spacing: isMobile ? 60 : isTablet ? 85 : 110,
-              controlPoints: getControlPoints(),
-            }}
-          >
-            {"HEALER".split("").map((char, i) => (
-              <span
-                key={i}
-                className="text-5xl sm:text-7xl min-[1025px]:text-9xl font-serif text-[#111] drop-shadow-lg"
-              >
-                {char}
-              </span>
-            ))}
-          </LayoutOrchestra>
-        </div> */}
         <h1
-          className="w-[70vw] font-share z-50 text-[black] font-bold "
+          className="-[70vw] font-share z-50 text-[black] font-bold "
           style={{ fontSize: "var(--step-14)" }}
         >
           HEALER
         </h1>
 
+        <h1
+          className="text-2xl font-light drop-shadow-md font-share uppercase z-10 "
+          style={{ fontSize: "var(--step-14)" }}
+        >
+          herbal water
+        </h1>
+
         {/* --- Cycling Bottle Display --- */}
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-          {bottleImages.map((src, idx) => (
-            <img
-              key={src}
-              src={src}
-              alt={`Healer Bottle ${idx + 1}`}
-              className={`absolute w-auto h-[50vh] transition-all duration-1000 ease-in-out transform ${
-                idx === currentBottle
-                  ? "opacity-60 scale-110 blur-0 translate-y-0"
-                  : "opacity-0 scale-90 blur-md translate-y-10"
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="relative z-30 text-center px-4">
-          <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
-            Experience the purity of <strong>Healer</strong>. A refreshing
-            infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
-            rejuvenate your body and mind with every conscious sip.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center font-bold">
-            <Link
-              to="/alchemy"
-              className="bg-white text-[#0369a1] px-10 py-4 rounded-full hover:bg-opacity-90 transition-all tracking-wide shadow-xl"
-            >
-              Discover the Herbs
-            </Link>
-            <Link
-              to="/roots"
-              className="text-white border border-white/40 px-10 py-4 rounded-full hover:bg-white/10 transition-all tracking-wide"
-            >
-              ALMAZ100 Story
-            </Link>
-          </div>
-        </div>
       </section>
+      <div className="bsolute nset-0 h-[50vh] my-8 flex items-center justify-center z-10 pointer-events-none">
+        {bottleImages.map((src, idx) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Healer Bottle ${idx + 1}`}
+            className={`absolute w-auto max-h-full transition-all duration-1000 ease-in-out transform ${
+              idx === currentBottle
+                ? "opacity-60 scale-110 blur-0 translate-y-0"
+                : "opacity-0 scale-90 blur-md translate-y-10"
+            }`}
+          />
+        ))}
+      </div>
+      <div className="relative z-30 text-center px-4">
+        <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
+          Experience the purity of <strong>Healer</strong>. A refreshing
+          infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
+          rejuvenate your body and mind with every conscious sip.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center font-bold">
+          <Link
+            to="/alchemy"
+            className="bg-white text-[#0369a1] px-10 py-4 rounded-full hover:bg-opacity-90 transition-all tracking-wide shadow-xl"
+          >
+            Discover the Herbs
+          </Link>
+          <Link
+            to="/roots"
+            className="text-white border border-white/40 px-10 py-4 rounded-full hover:bg-white/10 transition-all tracking-wide"
+          >
+            ALMAZ100 Story
+          </Link>
+        </div>
+      </div>
       {/* Static Logo Branding */}
       <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
         <img

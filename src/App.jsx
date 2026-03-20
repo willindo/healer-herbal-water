@@ -1,36 +1,56 @@
-import { Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 1. Import Footer
+import React, { useRef } from "react";
+import Navbar from "./components/NavbarScroll";
+import Footer from "./components/Footer";
+import Home from "./pages/Home/Home3";
 import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots1";
 import Journal from "./pages/Journal/Journal";
 import Profile from "./pages/Profile/Profile3";
-import Home from "./pages/Home/Home3";
-import Water2 from "./components/Water2";
-import HerbJournalOverlay from "./components/HerbJournalOverlay";
 
 function App() {
+  // 1. Create references for each section
+  const homeRef = useRef(null);
+  const alchemyRef = useRef(null);
+  const rootsRef = useRef(null);
+  const journalRef = useRef(null);
+  const profileRef = useRef(null);
+
+  // 2. Scroll function
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop - 80, // -80 accounts for navbar height
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <>
-      <Navbar />
-      {/* <Water2 /> */}
-      <div className="min-h-screen bg-healer-cream flex flex-col">
-        <main className="flex-grow">
-          {" "}
-          {/* 2. This ensures footer stays at bottom */}
-          <Routes>
-            {/* <ScrollToTop /> */}
-            <Route path="/" element={<Home />} />
-            <Route path="/alchemy" element={<Alchemy />} />
-            <Route path="/roots" element={<Roots />} />
-            <Route path="/journal" element={<Journal />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen g-healer-cream flex flex-col">
+      {/* 3. Pass the scroll function to Navbar */}
+      <Navbar
+        onNavClick={scrollToSection}
+        refs={{ homeRef, alchemyRef, rootsRef, journalRef, profileRef }}
+      />
+
+      <main className="flex-grow">
+        <section ref={homeRef}>
+          <Home />
+        </section>
+        <section ref={alchemyRef}>
+          <Alchemy />
+        </section>
+        <section ref={rootsRef}>
+          <Roots />
+        </section>
+        <section ref={journalRef}>
+          <Journal />
+        </section>
+        <section ref={profileRef}>
+          <Profile />
+        </section>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 

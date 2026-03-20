@@ -1,0 +1,77 @@
+       {/* We use a key here so the animation restarts when the bottle changes */}
+            {/* <MotionTextMath
+              key={currentBottle}
+              text="Herbal Water"
+              pattern="pendulum"
+              /> */}
+          </div>
+          {/* <h1 className="text-[#a18020] tracking-widest text-sm mt-4">
+            EST. 2024 • TRADITIONAL WISDOM
+            </h1> */}
+        </div>
+
+        {/* Main "HEALER" Curved Title with its own Fade effect */}
+        {/* <div className="z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full">
+          <LayoutOrchestra
+          layout="bezier"
+          config={{
+            spacing: isMobile ? 60 : isTablet ? 85 : 110,
+            controlPoints: getControlPoints(),
+            }}
+            >
+            {"HEALER".split("").map((char, i) => (
+              <span
+              key={i}
+              className="text-5xl sm:text-7xl min-[1025px]:text-9xl font-serif text-[#111] drop-shadow-lg"
+              >
+              {char}
+              </span>
+              ))}
+              </LayoutOrchestra>
+              </div> */}
+              {/* {"HEALER".split("").map((char, i) => {
+        const colors = [
+          "#FF5733",
+          "#33FF57",
+          "#3357FF",
+          "#FF33F5",
+          "#33FFF5",
+          "#F5FF33",
+          "#FF8333",
+          "#8333FF",
+          "#33FF83",
+          "#FF3380",
+        ];
+        const distinctColor = colors[i % colors.length];
+        // each item is +20px wider and +10px taller
+        const width = 20 + i * 10;
+        const height = 20 + i * 10;
+        const fontSize = 20 + i * 5;
+
+        return (
+          <div
+            key={i}
+            style={{
+              width,
+              height,
+              fontSize,
+              // background: distinctColor,
+              color: distinctColor,
+              textAlign: "center",
+              // borderRadius: "50%",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "2px",
+            }}
+          >
+            {char}
+          </div>
+        );
+      })} */}
+      {/* <h1
+        className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
+        style={{ fontSize: "var(--step-12)" }}
+      >
+        HEALER
+      </h1> */}
