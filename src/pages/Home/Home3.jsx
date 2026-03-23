@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  MousePointer2,
-  Droplets,
-  Leaf,
-  ShieldCheck,
-  Waves,
-} from "lucide-react";
+
 import { AnimatedScope } from "../../components/AnimatedScope";
 import { MotionTextMath } from "../../components/MotionTextOrchestra";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
@@ -21,12 +15,17 @@ const Home = () => {
   // --- Bottle Image Cycling Logic ---
   const [currentBottle, setCurrentBottle] = useState(0);
   const bottleImages = [
-    "/assets/bottle/bottle1.png",
-    "/assets/bottle/bottle2.png",
-    "/assets/bottle/bottle3.png",
-    "/assets/bottle/bottle4.png",
-    "/assets/bottle/bottle5.png",
-    "/assets/bottle/bottle6.png",
+    "/assets/healer/h12.png",
+    "/assets/healer/ha36.png",
+    "/assets/healer/h26.png",
+    "/assets/healer/ha48.png",
+    "/assets/healer/h29.png",
+    "/assets/healer/ha57.png",
+    "/assets/healer/h87.png",
+    "/assets/healer/ha46.png",
+    "/assets/healer/ha55.png",
+    "/assets/healer/ha60.png",
+    "/assets/healer/ha68.png",
   ];
 
   useEffect(() => {
@@ -71,137 +70,68 @@ const Home = () => {
         property="og:description"
         content="Natural hydration meets ancient herbal wisdom."
       />
-      <section className="relative -[94vh] flex flex-col items-center justify-around overflow-hidden border-0 mt-10">
-        {/* Dynamic Water Gradient Background */}
-        {/* <div
+      <section className="relative min-h-screen max-lg:flex flex-col items-center justify-around overflow-hidden border-0 mt-10 lg:grid lg:grid-cols-[20vw_70vw_10vw] lg:grid-rows-[3rem_4rem_4rem_1fr_auto]  ">
+        <div
           className="absolute inset-0 transition-colors duration-1000"
           style={{
             background:
               "linear-gradient(180deg, #e0fef2 0%, #7dfcd3 30%, #0ee9a5 70%, #03a169 100%)",
             opacity: 0.9,
           }}
-        /> */}
+        />
         {/* Brand & Origin Label */}
-        <div className=" pt-5  z-20 text-center">
+        <div className=" pt-5  z-20 text-center lg:row-start-1 lg:col-span-3 place-self-center ">
           <h2
-            className="text-[#d6a60c] uppercase tracking-[0.4em] font-bold animate-pulse"
+            className="text-[forestgreen] capitalize tracking-[0.4em] font-bold animate-pulse "
             style={{ fontSize: "var(--step-0)" }}
           >
-            ALMAZ100 Presents
+            almaz100 global presents
           </h2>
-          <div className="p-6 space-y-4 flex flex-col text-[#017f01]"></div>
+          {/* <div className="p-6 space-y-4 flex flex-col text-[#017f01]"></div> */}
           {/* <h1 className="text-[#a18020] tracking-widest text-sm mt-4">
             EST. 2024 • TRADITIONAL WISDOM
             </h1> */}
         </div>
 
         <h1
-          className="-[70vw] font-share z-50 text-[black] font-bold "
+          className="-[70vw] font-share z-50 text-[black] font-bold lg:col-start-1 lg:row-start-2 place-self-center"
           style={{ fontSize: "var(--step-14)" }}
         >
           HEALER
         </h1>
 
         <h1
-          className="text-2xl font-light drop-shadow-md font-share uppercase z-10 "
-          style={{ fontSize: "var(--step-14)" }}
+          className="text-2xl font-light drop-shadow-md font-share uppercase z-10 lg:col-start-1 lg:row-start-3 place-self-center "
+          style={{ fontSize: "var(--step-13)" }}
         >
           herbal water
         </h1>
 
         {/* --- Cycling Bottle Display --- */}
-      </section>
-      <div className="bsolute nset-0 h-[50vh] my-8 flex items-center justify-center z-10 pointer-events-none">
-        {bottleImages.map((src, idx) => (
-          <img
-            key={src}
-            src={src}
-            alt={`Healer Bottle ${idx + 1}`}
-            className={`absolute w-auto max-h-full transition-all duration-1000 ease-in-out transform ${
-              idx === currentBottle
-                ? "opacity-60 scale-110 blur-0 translate-y-0"
-                : "opacity-0 scale-90 blur-md translate-y-10"
-            }`}
-          />
-        ))}
-      </div>
-      <div className="relative z-30 text-center px-4">
-        <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed mt-10 mb-10 bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
-          Experience the purity of <strong>Healer</strong>. A refreshing
-          infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted to
-          rejuvenate your body and mind with every conscious sip.
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center font-bold">
-          <Link
-            to="/alchemy"
-            className="bg-white text-[#0369a1] px-10 py-4 rounded-full hover:bg-opacity-90 transition-all tracking-wide shadow-xl"
-          >
-            Discover the Herbs
-          </Link>
-          <Link
-            to="/roots"
-            className="text-white border border-white/40 px-10 py-4 rounded-full hover:bg-white/10 transition-all tracking-wide"
-          >
-            ALMAZ100 Story
-          </Link>
+        <div className="relative  max-lg:aspect-square  w-full lg:w-[70%] lg:h-full  mx-auto my-8  bg-transparent flex items-center justify-center z-30 pointer-events-none overflow-hidden lg:col-start-2 lg:row-start-2 row-end-5 ">
+          {bottleImages.map((src, idx) => (
+            <img
+              key={src}
+              src={src}
+              alt={`Healer Bottle ${idx + 1}`}
+              className={`absolute bg-transparent lg:w-auto lg:h-auto object-contain object-center transition-all duration-1000 ease-in-out transform ${
+                idx === currentBottle
+                  ? "opacity-60 scale-110 blur-0 translate-y-0"
+                  : "opacity-0 scale-90 blur-md translate-y-10"
+              }`}
+            />
+          ))}
         </div>
-      </div>
+      </section>
+
       {/* Static Logo Branding */}
-      <div className=" absolute w-3/12 top-[10%]  right-[1%] bg[#c3722c] ">
+      <div className=" absolute w-3/12 top-[10%] md:top-[5%]  right-[1%] bg[#c3722c]  ">
         <img
           src="../ALMAZ100.png"
           alt=""
           className=" mi-blend-color-dodge animate-pulse "
         />
       </div>
-      <section className="pt-16 pb-24 bg-gradient-to-b from-[#03a169] to-[#39e8b1]">
-        <AnimatedScope
-          className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
-          animation="slideRight"
-          once={false}
-          stagger={0.7}
-        >
-          {[
-            {
-              icon: <Waves />,
-              title: "Sacred Hydration",
-              desc: "A silken pour of 7 rare blooms and spices. More than water—it’s an ethereal fragrance you can drink, refreshing the soul and leaving a hauntingly beautiful trail on your palate",
-            },
-            {
-              icon: <ShieldCheck />,
-              title: "Immunity by ALMAZ",
-              desc: "Deep, soul-warming notes of Black Cumin and Cardamom. A perfumed strength that guards your body, releasing a refreshing, spiced mist on your palate with every sip.",
-            },
-            {
-              icon: <Leaf />,
-              title: "100% Natural",
-              desc: "Pure, petal-soft hydration. Zero calories, zero additives—just the intoxicating aroma of ancient healing captured in a bottle.",
-            },
-          ].map((item, idx) => (
-            <AnimatedScope
-              className=" flex flex-wrap items-center"
-              animation="slideRight"
-              once={false}
-              stagger={0.7}
-            >
-              <AnimatedScope
-                key={idx}
-                animation="slideRight"
-                once={false}
-                stagger={0.7}
-                className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
-              >
-                <div className="text-white animate-pulse">{item.icon}</div>
-                <h3 className="text-xl font-bold text-white uppercase tracking-wider">
-                  {item.title}
-                </h3>
-                <p className="text-blue-50 leading-relaxed">{item.desc}</p>
-              </AnimatedScope>
-            </AnimatedScope>
-          ))}
-        </AnimatedScope>
-      </section>
     </>
   );
 };

@@ -131,16 +131,31 @@ const Profile = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="bg-[#444] text-white p-3 md:p-10 rounded-[2rem] relative overflow-hidden"
         >
-          <TripleFrameCard className="relative z-10 p-8 md:p-10 ">
-            <h3 className="text-4xl font-serif mb-12 italic border-b border-white/10 pb-6">
+          <TripleFrameCard className="relative z-10 p-8 md:p-10 border-white/5">
+            <h3 className="text-4xl font-serif mb-12 italic border-b border-white/10 pb-6 text-healer-gold">
               Operational Matrix
             </h3>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-24">
+              {/* Address Block */}
+              <div className="group">
+                <p className="text-[#28a931] font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
+                  Registered Office
+                </p>
+                <div className="text-lg font-share opacity-90 leading-relaxed">
+                  <span className="text-xl font-bold block mb-1">
+                    Almaz100 Global Pvt. Ltd.
+                  </span>
+                  CP 1/316 B, P.O. Palayamkunnu
+                  <br />
+                  Varkala, Thiruvananthapuram
+                  <br />
+                  Kerala — 695146
+                </div>
+              </div>
+
+              {/* Other Info Blocks */}
               {[
-                {
-                  label: "Registered Office",
-                  val: "Healer Herbal Infusions, Kerala, India",
-                },
                 { label: "Directorate", val: "Strategic Wellness Division" },
                 { label: "Contact Channel", val: "+91 98460 51101" },
                 { label: "Digital Enquiries", val: "hello@healerdrink.com" },

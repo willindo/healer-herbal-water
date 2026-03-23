@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        {/* <div>
           <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3fc79a]">
             Explore
           </h4>
@@ -63,7 +63,7 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Info */}
         <div>

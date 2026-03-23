@@ -286,11 +286,6 @@ export function HerbsSection({ onExplore }) {
               Each herb tells a story of ancient healing traditions. Discover
               how these natural wonders can transform your wellbeing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-healer-green text-white font-semibold rounded-full hover:bg-healer-green/90 transition-colors">
-                Explore All Herbs
-              </button>
-            </div>
           </div>
         </motion.div>
       </div>

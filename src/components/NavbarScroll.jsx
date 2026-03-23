@@ -49,7 +49,7 @@ export default function Navbar({ onNavClick, refs }) {
               alt="ALMAZ100 HEALER"
               className="h-10 w-auto object-contain hover:scale-105 transition-transform"
             />
-            <span className="font-serif font-bold text-healer-green tracking-tighter hidden sm:block">
+            <span className="font-share font-bold text-healer-green tracking-tighter hidden sm:block">
               HEALER
             </span>
           </button>
