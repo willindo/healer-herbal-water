@@ -104,17 +104,26 @@ const Home = () => {
         </h1>
 
         {/* --- Cycling Bottle Display --- */}
-        <div className="relative  max-lg:aspect-square  w-full lg:w-[70%] lg:h-full  mx-auto my-8  bg-transparent flex items-center justify-center z-30 pointer-events-none overflow-hidden lg:col-start-2 lg:row-start-2 row-end-5 lg:self-center ">
+        <div
+          className="relative max-lg:aspect-square w-full lg:w-[70%] lg:h-full mx-auto my-8 flex items-center justify-center z-30 overflow-hidden lg:col-start-2 lg:row-start-2 row-end-5 lg:self-center"
+          style={{ background: "transparent" }}
+        >
           {bottleImages.map((src, idx) => (
             <img
               key={src}
               src={src}
               alt={`Healer Bottle ${idx + 1}`}
-              className={`absolute bg-transparent lg:w-auto lg:h-auto object-contain object-center transition-all duration-1000 ease-in-out transform ${
+              className={`absolute w-full h-full object-contain object-center transition-all duration-1000 ease-in-out transform ${
                 idx === currentBottle
-                  ? "opacity-60 scale-110 blur-0 translate-y-0"
-                  : "opacity-0 scale-90 blur-md translate-y-10"
+                  ? "opacity-100 scale-100 blur-0 translate-y-0"
+                  : "opacity-0 scale-95 blur-none translate-y-8 pointer-events-none"
               }`}
+              style={{
+                background: "transparent",
+                mixBlendMode: "normal",
+                isolation: "isolate",
+              }}
+              loading="lazy"
             />
           ))}
         </div>
