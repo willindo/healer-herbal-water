@@ -157,7 +157,7 @@ const Profile = () => {
               {/* Other Info Blocks */}
               {[
                 { label: "Directorate", val: "Strategic Wellness Division" },
-                { label: "Contact Channel", val: "+91 - - - - - - - - - -" },
+                { label: "Contact Channel", val: "+91 85930 89373" },
                 {
                   label: "Digital Enquiries",
                   val: "hello@healerherbaldrink.com",

@@ -16,16 +16,12 @@ const Roots = () => {
   // --- Synchronized Bottle Logic from Home.jsx ---
   const [currentBottle, setCurrentBottle] = useState(0);
   const bottleImages = [
-    "/assets/healer/h12.png",
+    "/assets/healer/ha31.png",
     "/assets/healer/ha36.png",
-    "/assets/healer/h26.png",
-    "/assets/healer/ha48.png",
-    "/assets/healer/h29.png",
-    "/assets/healer/ha57.png",
-    "/assets/healer/h87.png",
-    "/assets/healer/ha46.png",
+    "/assets/healer/ha37.png",
+    "/assets/healer/ha44.png",
+    "/assets/healer/ha52.png",
     "/assets/healer/ha55.png",
-    "/assets/healer/ha60.png",
     "/assets/healer/ha68.png",
   ];
 
@@ -87,17 +83,31 @@ const Roots = () => {
               className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-green-100 to-green-300"
             >
               {/* Cycling Bottle Images */}
-              <div className="absolute inset-0 flex items-center justify-center p-12">
+              <div className="absolute inset-0 flex items-center justify-center  lg:p-12">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentBottle}
                     src={bottleImages[currentBottle]}
                     alt="Healer Premium Bottle"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                    initial={{ opacity: 0, y: 20, scale: 0.85 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 1.1 }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                    className="h-full w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for smoother animation
+                      opacity: { duration: 0.6 },
+                    }}
+                    className="h-full w-auto object-contain"
+                    style={{
+                      filter:
+                        "drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) brightness(1.02) contrast(1.05)",
+                      imageRendering: "crisp-edges",
+                      WebkitFontSmoothing: "antialiased",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)", // Forces hardware acceleration
+                    }}
+                    draggable={false}
+                    loading="eager"
                   />
                 </AnimatePresence>
               </div>
