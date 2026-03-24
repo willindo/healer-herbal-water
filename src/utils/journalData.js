@@ -19,7 +19,7 @@ export const articles = [
     id: 3,
     category: "Tradition",
     title: "Ancient Roots in a Modern Bottle",
-    excerpt: "The journey of 9 sacred herbs from forest floors to glass bottles.",
+    excerpt: "The journey of 7 sacred herbs from forest floors to glass bottles.",
     date: "Jan 28, 2026",
     image: "https://images.unsplash.com/photo-1515600051222-73c33833201a?auto=format&fit=crop&q=80&w=800"
   }

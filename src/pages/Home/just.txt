@@ -75,3 +75,46 @@
       >
         HEALER
       </h1> */}
+      {/* <div>
+          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3fc79a]">
+            Explore
+          </h4>
+          <ul className="space-y-4 text-sm text-[#3fc79a]">
+            <li>
+              <Link
+                to="/alchemy"
+                className="hover:text-healer-gold transition-colors"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                The Alchemy
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/roots"
+                className="hover:text-healer-gold transition-colors"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Our Roots
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/journal"
+                className="hover:text-healer-gold transition-colors"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                The Journal
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/profile"
+                className="hover:text-healer-gold transition-colors font-bold"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Company Profile
+              </Link>
+            </li>
+          </ul>
+        </div> */}

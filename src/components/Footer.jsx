@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#412f2c]  pt-20 pb-10 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-healer-cream/10 pb-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-healer-cream/10 pb-16">
         {/* Brand Column */}
         <div className="space-y-6">
           <h1
@@ -21,49 +21,6 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        {/* <div>
-          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-[#3fc79a]">
-            Explore
-          </h4>
-          <ul className="space-y-4 text-sm text-[#3fc79a]">
-            <li>
-              <Link
-                to="/alchemy"
-                className="hover:text-healer-gold transition-colors"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                The Alchemy
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/roots"
-                className="hover:text-healer-gold transition-colors"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Our Roots
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/journal"
-                className="hover:text-healer-gold transition-colors"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                The Journal
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/profile"
-                className="hover:text-healer-gold transition-colors font-bold"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Company Profile
-              </Link>
-            </li>
-          </ul>
-        </div> */}
 
         {/* Contact Info */}
         <div>
@@ -77,7 +34,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-3">
               <Mail size={16} className="text-healer-gold" />
-              <span>hello@healerdrink.com</span>
+              <span>hello@healerherbaldrink.com</span>
             </li>
             <li className="flex items-start gap-3">
               <MapPin size={16} className="text-healer-gold mt-1" />
@@ -91,7 +48,7 @@ const Footer = () => {
 
         {/* Newsletter/Social */}
         <div>
-          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-healer-gold">
+          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-healer-gold place-self-center">
             Follow Us
           </h4>
           <div className="flex gap-4">

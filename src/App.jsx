@@ -64,7 +64,7 @@ function App() {
               },
               {
                 icon: <ShieldCheck />,
-                title: "Immunity by ALMAZ",
+                title: "Immunity by Almaz100",
                 desc: "Deep, soul-warming notes of Black Cumin and Cardamom. A perfumed strength that guards your body, releasing a refreshing, spiced mist on your palate with every sip.",
               },
               {

@@ -70,7 +70,7 @@ const Home = () => {
         property="og:description"
         content="Natural hydration meets ancient herbal wisdom."
       />
-      <section className="relative min-h-screen max-lg:flex flex-col items-center justify-around overflow-hidden border-0 mt-10 lg:grid lg:grid-cols-[20vw_70vw_10vw] lg:grid-rows-[3rem_4rem_4rem_1fr_auto]  ">
+      <section className="relative lg:min-h-screen max-lg:flex flex-col items-center justify-around overflow-hidden border-0 mt-10 lg:grid lg:grid-cols-[30vw_60vw_10vw] lg:grid-rows-[3rem_4rem_4rem_1fr_auto]  ">
         <div
           className="absolute inset-0 transition-colors duration-1000"
           style={{
@@ -108,7 +108,7 @@ const Home = () => {
         </h1>
 
         {/* --- Cycling Bottle Display --- */}
-        <div className="relative  max-lg:aspect-square  w-full lg:w-[70%] lg:h-full  mx-auto my-8  bg-transparent flex items-center justify-center z-30 pointer-events-none overflow-hidden lg:col-start-2 lg:row-start-2 row-end-5 ">
+        <div className="relative  max-lg:aspect-square  w-full lg:w-[70%] lg:h-full  mx-auto my-8  bg-transparent flex items-center justify-center z-30 pointer-events-none overflow-hidden lg:col-start-2 lg:row-start-2 row-end-5 lg:self-center ">
           {bottleImages.map((src, idx) => (
             <img
               key={src}
