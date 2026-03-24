@@ -30,7 +30,7 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-[#3fc79a]">
             <li className="flex items-center gap-3">
               <Phone size={16} className="text-healer-gold" />
-              <span>+91 98460 51101</span>
+              <span>+91 ----- ----- </span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={16} className="text-healer-gold" />
@@ -38,17 +38,21 @@ const Footer = () => {
             </li>
             <li className="flex items-start gap-3">
               <MapPin size={16} className="text-healer-gold mt-1" />
-              <span>
-                Kerala, India <br />
-                Traditional Roots, Global Vision
+              <span className=" font-bold block mb-1">
+                Almaz100 Global Pvt. Ltd.
               </span>
+              CP 1/316 B, P.O. Palayamkunnu
+              <br />
+              Varkala, Thiruvananthapuram
+              <br />
+              Kerala — 695146
             </li>
           </ul>
         </div>
 
         {/* Newsletter/Social */}
-        <div>
-          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-healer-gold place-self-center">
+        <div className="place-self-center">
+          <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-healer-gold ">
             Follow Us
           </h4>
           <div className="flex gap-4">

@@ -43,15 +43,15 @@ const Profile = () => {
       {/* Global Presence Banner */}
       <div className="bg-healer-green text-white py-3 px-6 mb-16">
         <div
-          className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center  font-share tracking-[0.3em] uppercase opacity-80"
+          className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center  font-share tracking-[0.3em]  opacity-80"
           style={{ fontSize: "var(--step-11)" }}
         >
           <span className="flex items-center gap-2">
-            <MapPin size={12} /> Dubai: ALMAZ100 GLOBAL LLC
+            <MapPin size={12} /> DUBAI: Almaz100 Global LLC
           </span>
           <div className="h-px w-8 bg-white/20 hidden md:block"></div>
           <span className="flex items-center gap-2">
-            <MapPin size={12} /> India: ALMAZ100 GLOBAL Pvt. Ltd
+            <MapPin size={12} /> INDIA: Almaz100 Global PVT. LTD
           </span>
         </div>
       </div>
@@ -85,7 +85,7 @@ const Profile = () => {
               {specs.map((item, index) => (
                 <TripleFrameCard
                   key={index}
-                  className="p-8 bg-[#444] text-white rounded-2xl border border-white/10"
+                  className="p-8 bg-[#444] text-white ounded-2xl border border-white/10"
                 >
                   <div className="text-[#28a931] mb-6">{item.icon}</div>
                   <h3 className="font-serif text-2xl mb-3 italic">
@@ -109,7 +109,7 @@ const Profile = () => {
                 {specs.map((item, index) => (
                   <TripleFrameCard
                     key={index}
-                    className="w-[300px] p-8 bg-[#444] text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
+                    className="w-[300px] p-8 bg-[#444] text-white ounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
                   >
                     <div className="text-[#45924a] mb-4">{item.icon}</div>
                     <h3 className="font-serif text-2xl mb-2 italic">
@@ -129,7 +129,7 @@ const Profile = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="bg-[#444] text-white p-3 md:p-10 rounded-[2rem] relative overflow-hidden"
+          className="bg-[#444] text-white p-3 md:p-10 ounded-[2rem] relative overflow-hidden"
         >
           <TripleFrameCard className="relative z-10 p-8 md:p-10 border-white/5">
             <h3 className="text-4xl font-serif mb-12 italic border-b border-white/10 pb-6 text-healer-gold">
@@ -157,8 +157,11 @@ const Profile = () => {
               {/* Other Info Blocks */}
               {[
                 { label: "Directorate", val: "Strategic Wellness Division" },
-                { label: "Contact Channel", val: "+91 98460 51101" },
-                { label: "Digital Enquiries", val: "hello@healerdrink.com" },
+                { label: "Contact Channel", val: "+91 - - - - - - - - - -" },
+                {
+                  label: "Digital Enquiries",
+                  val: "hello@healerherbaldrink.com",
+                },
               ].map((info, idx) => (
                 <div key={idx} className="group">
                   <p className="text-[#28a931] font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">

@@ -20,7 +20,7 @@ export default function Navbar({ onNavClick, refs }) {
     { ref: refs.homeRef, label: "Home" },
     { ref: refs.alchemyRef, label: "The Alchemy" },
     { ref: refs.rootsRef, label: "Our Roots" },
-    { ref: refs.journalRef, label: "The Journal" },
+    // { ref: refs.journalRef, label: "The Journal" },
     { ref: refs.profileRef, label: "Profile" },
   ];
 

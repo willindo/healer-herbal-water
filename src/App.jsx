@@ -19,7 +19,7 @@ function App() {
   const homeRef = useRef(null);
   const alchemyRef = useRef(null);
   const rootsRef = useRef(null);
-  const journalRef = useRef(null);
+  // const journalRef = useRef(null);
   const profileRef = useRef(null);
 
   // 2. Scroll function
@@ -35,7 +35,7 @@ function App() {
       {/* 3. Pass the scroll function to Navbar */}
       <Navbar
         onNavClick={scrollToSection}
-        refs={{ homeRef, alchemyRef, rootsRef, journalRef, profileRef }}
+        refs={{ homeRef, alchemyRef, rootsRef, profileRef }}
       />
 
       <main className="flex-grow pt-4 ">
@@ -46,8 +46,8 @@ function App() {
           <div className="relative z-30 text-center px-4 py-8 ">
             <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed   bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
               Experience the purity of <strong>Healer</strong>. A refreshing
-              infusion of 7 sacred herbs by <strong>ALMAZ100</strong>, crafted
-              to rejuvenate your body and mind with every conscious sip.
+              infusion of 7 sacred herbs by <strong>Almaz100 Global</strong>,
+              crafted to rejuvenate your body and mind with every conscious sip.
             </p>
           </div>
           <AnimatedScope
@@ -64,7 +64,7 @@ function App() {
               },
               {
                 icon: <ShieldCheck />,
-                title: "Immunity by Almaz100",
+                title: "Aromatic Shield",
                 desc: "Deep, soul-warming notes of Black Cumin and Cardamom. A perfumed strength that guards your body, releasing a refreshing, spiced mist on your palate with every sip.",
               },
               {
@@ -102,9 +102,9 @@ function App() {
         <section ref={rootsRef}>
           <Roots />
         </section>
-        <section ref={journalRef}>
+        {/* <section ref={journalRef}>
           <Journal />
-        </section>
+        </section> */}
         <section ref={profileRef}>
           <Profile />
         </section>

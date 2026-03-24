@@ -66,9 +66,9 @@ const Roots = () => {
                   sugary, artificial beverages.
                 </p>
                 <p className="text-[white] text-lg leading-relaxed font-medium">
-                  Under the stewardship of <strong>ALMAZ100</strong>, we spent
-                  years working with traditional herbalists to perfect a blend
-                  of 7 sacred ingredients.
+                  Under the stewardship of <strong>Almaz100 Global</strong>, we
+                  spent years working with traditional herbalists to perfect a
+                  blend of 7 sacred ingredients.
                 </p>
               </div>
 
@@ -116,7 +116,8 @@ const Roots = () => {
                     Ancient Wisdom
                   </p>
                   <p className="text-white/80 text-xs tracking-widest italic">
-                    Modern Craft • ALMAZ100
+                    Modern Craft •{" "}
+                    <span className=" not-italic "> Almaz100 Global</span>
                   </p>
                 </motion.div>
               </div>
