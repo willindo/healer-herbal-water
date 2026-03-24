@@ -15,16 +15,12 @@ const Home = () => {
   // --- Bottle Image Cycling Logic ---
   const [currentBottle, setCurrentBottle] = useState(0);
   const bottleImages = [
-    "/assets/healer/h12.png",
+    "/assets/healer/ha31.png",
     "/assets/healer/ha36.png",
-    "/assets/healer/h26.png",
-    "/assets/healer/ha48.png",
-    "/assets/healer/h29.png",
-    "/assets/healer/ha57.png",
-    "/assets/healer/h87.png",
-    "/assets/healer/ha46.png",
+    "/assets/healer/ha37.png",
+    "/assets/healer/ha44.png",
+    "/assets/healer/ha52.png",
     "/assets/healer/ha55.png",
-    "/assets/healer/ha60.png",
     "/assets/healer/ha68.png",
   ];
 
