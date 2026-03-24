@@ -46,13 +46,10 @@ function App() {
           <div className="relative z-30 text-center px-4 py-12">
             <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed bg-gradient-to-br from-black/40 to-black/25 p-6 rounded-2xl backdrop-blur-md border border-white/20 shadow-lg">
               Experience the purity of{" "}
-              <strong className="text-healer-gold font-semibold">Healer</strong>
-              . A refreshing infusion of 7 sacred herbs by{" "}
-              <strong className="text-healer-gold font-semibold">
-                Almaz100 Global
-              </strong>
-              , crafted to rejuvenate your body and mind with every conscious
-              sip.
+              <strong className="text- font-semibold">Healer</strong>. A
+              refreshing infusion of 7 sacred herbs by{" "}
+              <strong className="text- font-semibold">Almaz100 Global</strong>,
+              crafted to rejuvenate your body and mind with every conscious sip.
             </p>
           </div>
 
