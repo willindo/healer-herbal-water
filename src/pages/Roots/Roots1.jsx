@@ -135,7 +135,6 @@ const Roots = () => {
           }}
         />
         <div className="absolute inset-0 bg-black/10" />
-
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <Feather

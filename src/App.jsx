@@ -42,16 +42,22 @@ function App() {
         <section ref={homeRef}>
           <Home />
         </section>
-        <section className="pt-4 pb-24 bg-gradient-to-b from-[#03a169] to-[#39e8b1]">
-          <div className="relative z-30 text-center px-4 py-8 ">
-            <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed   bg-black/20 p-4 rounded-lg backdrop-blur-md border border-white/10">
-              Experience the purity of <strong>Healer</strong>. A refreshing
-              infusion of 7 sacred herbs by <strong>Almaz100 Global</strong>,
-              crafted to rejuvenate your body and mind with every conscious sip.
+        <section className="pt-4 pb-24 bg-gradient-to-t from-[#028a5a] via-[#03a169] to-[#2ad494]">
+          <div className="relative z-30 text-center px-4 py-12">
+            <p className="max-w-2xl mx-auto text-white text-lg md:text-xl leading-relaxed bg-gradient-to-br from-black/40 to-black/25 p-6 rounded-2xl backdrop-blur-md border border-white/20 shadow-lg">
+              Experience the purity of{" "}
+              <strong className="text-healer-gold font-semibold">Healer</strong>
+              . A refreshing infusion of 7 sacred herbs by{" "}
+              <strong className="text-healer-gold font-semibold">
+                Almaz100 Global
+              </strong>
+              , crafted to rejuvenate your body and mind with every conscious
+              sip.
             </p>
           </div>
+
           <AnimatedScope
-            className="max-w-7xl mx-auto pt-4 px-8 grid grid-cols-1 md:grid-cols-3 gap-16 text-center items-center "
+            className="max-w-7xl mx-auto pt-8 px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-stretch"
             animation="slideRight"
             once={false}
             stagger={0.7}
@@ -60,7 +66,7 @@ function App() {
               {
                 icon: <Waves />,
                 title: "Sacred Hydration",
-                desc: "A silken pour of 7 rare blooms and spices. More than water—it’s an ethereal fragrance you can drink, refreshing the soul and leaving a hauntingly beautiful trail on your palate",
+                desc: "A silken pour of 7 rare blooms and spices. More than water—it's an ethereal fragrance you can drink, refreshing the soul and leaving a hauntingly beautiful trail on your palate",
               },
               {
                 icon: <ShieldCheck />,
@@ -73,26 +79,18 @@ function App() {
                 desc: "Pure, petal-soft hydration. Zero calories, zero additives—just the intoxicating aroma of ancient healing captured in a bottle.",
               },
             ].map((item, idx) => (
-              <AnimatedScope
-                className=" flex flex-wrap items-center"
-                animation="slideRight"
-                once={false}
-                stagger={0.7}
+              <div
+                key={idx}
+                className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-300 h-full"
               >
-                <AnimatedScope
-                  key={idx}
-                  animation="slideRight"
-                  once={false}
-                  stagger={0.7}
-                  className="flex flex-col gap-5 items-center p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
-                >
-                  <div className="text-white animate-pulse">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-white uppercase tracking-wider">
-                    {item.title}
-                  </h3>
-                  <p className="text-blue-50 leading-relaxed">{item.desc}</p>
-                </AnimatedScope>
-              </AnimatedScope>
+                <div className="text-healer-gold animate-pulse">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white uppercase tracking-wider">
+                  {item.title}
+                </h3>
+                <p className="text-white/80 leading-relaxed">{item.desc}</p>
+              </div>
             ))}
           </AnimatedScope>
         </section>
