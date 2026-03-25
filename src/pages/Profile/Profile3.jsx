@@ -160,7 +160,7 @@ const Profile = () => {
                 { label: "Contact Channel", val: "+91 85930 89373" },
                 {
                   label: "Digital Enquiries",
-                  val: "hello@healerherbaldrink.com",
+                  val: "almaz100.healer@gmail.com",
                 },
               ].map((info, idx) => (
                 <div key={idx} className="group">
