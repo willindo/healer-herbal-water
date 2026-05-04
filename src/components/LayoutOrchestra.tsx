@@ -21,6 +21,8 @@ export interface LayoutConfig {
   controlPoints?: [number, number][];
   cols?: number;
   upright?: boolean;
+  tDistribution?: "linear" | "easeIn" | "easeOut" | "easeInOut";
+  tIntensity?: number;
 }
 
 export interface LayoutOrchestraProps {
@@ -156,10 +158,10 @@ const LayoutOrchestra: React.FC<LayoutOrchestraProps> = ({
       // }
       case "bezier": {
         const cps = cfg.controlPoints ?? [
-          [0, 0],
-          [100, -100],
-          [200, 100],
-          [300, 0],
+          [-20, 0],
+          [80, -100],
+          [240, 100],
+          [320, 50],
         ];
 
         // Internal helper to calculate position and rotation at time 't' (0 to 1)
@@ -197,8 +199,18 @@ const LayoutOrchestra: React.FC<LayoutOrchestraProps> = ({
           return { x, y, rotate };
         };
 
+        // Inside LayoutOrchestra.tsx -> case "bezier"
+        // Inside your loop
         for (let i = 0; i < count; i++) {
-          const t = count > 1 ? i / (count - 1) : 0.5;
+          const progress = count > 1 ? i / (count - 1) : 0.5;
+
+          // Set your intensity here. 1.3 is usually perfect for subtle center spacing.
+          const intensity = cfg.tIntensity ?? 1.3;
+          // Custom S-curve interpolation
+          const t =
+            Math.pow(progress, intensity) /
+            (Math.pow(progress, intensity) + Math.pow(1 - progress, intensity));
+
           pos.push(getCubic(t, cps));
         }
         break;

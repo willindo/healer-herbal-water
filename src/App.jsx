@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home3";
 import Alchemy from "./pages/Alchemy/Alchemy";
 import Roots from "./pages/Roots/Roots1";
 import Journal from "./pages/Journal/Journal";
-import Profile from "./pages/Profile/Profile3";
+import Profile from "./pages/Profile/Profile4";
 import { AnimatedScope } from "./components/AnimatedScope";
 import {
   MousePointer2,

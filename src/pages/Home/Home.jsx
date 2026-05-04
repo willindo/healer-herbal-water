@@ -75,7 +75,7 @@ const Home = () => {
               controlPoints: getControlPoints(),
             }}
           >
-            {"HEALER".split("").map((char, i) => (
+            {"INTELLECTUAL".split("").map((char, i) => (
               <span
                 key={i}
                 className="text-5xl sm:text-7xl min-[1025px]:text-9xl font-serif text-white drop-shadow-lg"

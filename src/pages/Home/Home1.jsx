@@ -7,13 +7,20 @@ import { MotionTextMath } from "../../components/MotionTextOrchestra";
 import LayoutOrchestra from "../../components/LayoutOrchestra";
 import { useLayoutConfig } from "../../configs/useLayoutConfig";
 import { useMediaQuery } from "../../configs/useMediaQuery";
+import FoxLogoLab from "../../components/FoxLogoLab";
 
 const Home = () => {
   const { config, setConfig } = useLayoutConfig("circle");
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
   const isDesktop = useMediaQuery("(min-width: 1025px)");
+  const text = "INTELLECTUAL";
+  const totalLetters = text.length;
 
+  // Configuration for the "Fox Tail" sizing
+  const minSizeRem = 2; // Smallest size (ends)
+  const maxSizeRem = 4.5; // Largest size (center)
+  // const maxSizeRem = isMobile ? 2.5 : isTablet ? 3 : 4;
   const getControlPoints = () => {
     if (isMobile) {
       return [
@@ -27,7 +34,7 @@ const Home = () => {
         [-180, 8],
         [-50, -50],
         [60, 70],
-        [180, 5],
+        [180, 0],
       ];
     } else {
       return [
@@ -43,6 +50,7 @@ const Home = () => {
     <>
       {/* <WaterBackground /> */}
       {/* <Water2 /> */}
+      <FoxLogoLab />
       <section className="relative   h-[94vh] flex flex-col items-cente justify-around overflow-hidden  border-0 ">
         <div
           className="absolute inset-0"
@@ -74,34 +82,70 @@ const Home = () => {
           Est. 2024 • Traditional Wisdom
         </h2>
         <div className=" z-20 min-h-[800px]:-translate-y-3/4 h-20 max-sm:max-w-full ">
-          <LayoutOrchestra
+          {/* <LayoutOrchestra
             className=" "
             layout="bezier"
             config={{
               spacing: isMobile ? 60 : isTablet ? 85 : 110,
-              controlPoints: getControlPoints(),
+              // controlPoints: getControlPoints(),
             }}
           >
-            {"Heal Naturally".split("").map((char, i) => (
+            {"INTELLECTUAL".split("").map((char, i) => (
               <span
                 key={i}
-                className=" text-4xl sm:text-6xl min-[1025px]:text-8xl font-serif text-[green] "
+                className=" text-4xl sm:text-4xl min-[1025px]:text-8xl font-serif text-[green] "
               >
                 {char}
               </span>
             ))}
+          </LayoutOrchestra> */}
+          <LayoutOrchestra
+            className=""
+            layout="bezier"
+            config={{
+              tDistribution: "easeInOut",
+              tIntensity: 1,
+              // spacing: isMobile ? 60 : isTablet ? 85 : 110,
+            }}
+          >
+            {text.split("").map((char, i) => {
+              // Calculate normalized distance from center (0 = center, 1 = ends)
+              const centerIndex = (totalLetters - 1) / 2;
+              const distanceFromCenter = Math.abs(i - centerIndex);
+              const normalizedDistance = distanceFromCenter / centerIndex;
+
+              // Calculate size using a quadratic curve (1 - x^2) for a smooth taper
+              // Using Math.pow(..., 1.5) gives a slightly wider "tail" effect
+              const scale = 1 - Math.pow(normalizedDistance, 1.5);
+              const fontSize = minSizeRem + (maxSizeRem - minSizeRem) * scale;
+
+              return (
+                <span
+                  key={i}
+                  className="font-seri text-green font-bold "
+                  style={{
+                    fontSize: `${fontSize}rem`,
+                    lineHeight: 1,
+                    // Optional: add transition for smoothness if layout shifts
+                    transition: "font-size 0.3s ease-out",
+                  }}
+                >
+                  {char}
+                </span>
+              );
+            })}
           </LayoutOrchestra>
         </div>
         <div className="relative z-10 text-center px-4">
-          <div className="p-6 space-y-4 flex flex-col text-[#9aff9a] ">
+          {/* <div className="p-6 space-y-4 flex flex-col text-[#9aff9a] ">
             <MotionTextMath
               text="Live Fully "
               pattern="lissajous"
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-seri -z-10 "
-            />
-            {/* <MotionTextMath text="Just inline text" />{" "} */}
-            {/* defaults to <span> */}
-          </div>
+            /> */}
+          {/* <MotionTextMath text="Just inline text" />{" "} */}
+          {/* defaults to <span> */}
+          {/* </div> */}
           <p className="max-w-xxl mx-auto text-healer-green/80 text-xl md:text-xxl leading-relaxed mt-20 mb-10">
             A refreshing infusion of 7 sacred herbs, crafted to rejuvenate your
             body and mind with every conscious sip.
