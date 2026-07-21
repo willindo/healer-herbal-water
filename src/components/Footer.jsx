@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="space-y-6">
           <h1
-            className="font-share z-50 text-[black] font-bold bg-[white] max-w-fit "
+            className="font-share z-50 text-[black] px-2 font-bold bg-[white] max-w-fit "
             style={{ fontSize: "var(--step-12)" }}
           >
             HEALER
