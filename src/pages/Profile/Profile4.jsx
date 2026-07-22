@@ -107,8 +107,7 @@ const Profile = () => {
           </span>
         </div>
       </div>
-
-          // #395664e6  #2d4647  #008080
+      
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Company Overview Section */}
         <div className="mb-24">
