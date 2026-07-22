@@ -137,7 +137,7 @@ const Roots = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="relative py-24 overflow-hidden">
+      {/* <section className="relative py-24 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
@@ -186,7 +186,7 @@ const Roots = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Rest of the values sections remain as per your logic... */}
     </div>

@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   UserCircle,
+  Quote,
 } from "lucide-react";
 import TripleFrameCard from "../../components/TripleFrameCard";
 import Circle3D from "../../components/Circle3d";
@@ -45,17 +46,16 @@ const Profile = () => {
       role: "Director - Medical Research & Clinical Validation",
       description:
         "Spearheads clinical validation, therapeutic standardization, and health-claim compliance for our beverage portfolio. Bridges traditional herbal chemistry with modern medical science, working in tandem with global laboratories to ensure absolute biological efficacy, safety, and evidence-based nutraceutical positioning.",
-      image: "/assets/administrate/dr_razin.jpg", // Placeholder or fallback image
+      image: "/assets/administrate/Razin.jpg",
     },
     {
       name: "Scientific R&D Partner",
       role: "Zeed Drops Research Laboratories International Co. UAE",
       description:
         "Our official global research and development partner. They continuously validate our product formulations, raw material safety parameters, and shelf-life compliance to ensure full adherence to international FSSAI and ESMA (UAE) food safety regulations.",
-      image: "/assets/administrate/zeed_drops.jpg", // Placeholder or fallback image
+      image: "/assets/administrate/R&D.png",
     },
   ];
-
   const specs = [
     {
       icon: <ShieldCheck size={32} />,
@@ -89,14 +89,14 @@ const Profile = () => {
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
-
+  
   return (
     <div className="pt-32 pb-20 bg-white min-h-screen">
       {/* Global Presence Banner */}
       <div className="bg-healer-green text-white py-3 px-6 mb-16">
         <div
           className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center font-share tracking-[0.3em] opacity-80"
-          style={{ fontSize: "clamp(0.6rem, 2vw, 0.75rem)" }}
+          style={{ fontSize: "var(--step--10)" }}
         >
           <span className="flex items-center gap-2 text-center md:text-left">
             <MapPin size={12} /> DUBAI: Almaz100 Global LLC
@@ -108,141 +108,192 @@ const Profile = () => {
         </div>
       </div>
 
+          // #395664e6  #2d4647  #008080
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Company Overview Section */}
-        <div className="mb-20">
+        <div className="mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-br from-healer-cream/30 to-white border border-healer-gold/20 rounded-3xl p-8 md:p-12 shadow-sm"
+            viewport={{ once: true }}
+            className="bg-[#395664e6] text-zinc-100 rounded-3xl p-8 md:p-12 shadow-2xl border border-zinc-800 relative overflow-hidden"
           >
-            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">
-              Company Overview
-            </h2>
-            <p className="text-healer-green/80 text-lg leading-relaxed mb-6">
-              Almaz100 Global Private Limited is a Kerala-based wellness beverage
-              company founded on a simple belief: people should not have to
-              choose between taste, refreshment, and health.
-            </p>
-            <p className="text-healer-green/80 text-base leading-relaxed mb-6">
-              Our mission is to create enjoyable wellness drinks that deliver
-              authentic flavor and refreshment without the excessive added sugars
-              and preservative-heavy formulations commonly found in conventional
-              soft drinks. By combining traditional herbal wisdom with modern
-              beverage innovation, Almaz100 is building a new generation of
-              clean-label wellness beverages for consumers in India and
-              international markets.
-            </p>
-            <p className="text-healer-green/80 text-base leading-relaxed mb-8">
-              At the heart of our portfolio is <strong>Healer Herbal Water</strong>,
-              a modern botanical beverage inspired by traditional herbal drinks
-              once prepared in households using carefully selected herbs. Today,
-              that heritage is being reimagined into a scalable, premium wellness
-              product designed for contemporary lifestyles.
-            </p>
+            {/* Subtle background glow element */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#03a169]/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Product Philosophy */}
-            <div className="mb-10 bg-white/80 p-6 rounded-2xl border border-healer-gold/10">
-              <h3 className="text-xl font-serif text-healer-green italic mb-4 font-bold">
-                Our Product Philosophy
+            <div className="relative z-10">
+              <h2
+                className="text-[#2ad494] uppercase tracking-[0.3em] font-bold mb-3"
+                style={{ fontSize: "var(--step--10)" }}
+              >
+                Company Overview
+              </h2>
+              <h3
+                className="font-serif italic text-white mb-6 font-medium leading-snug"
+                style={{ fontSize: "var(--step-13)" }}
+              >
+                Redefining Refreshment Through Herbal Wisdom
               </h3>
-              <p className="text-sm text-healer-green/70 mb-4">
-                Every Almaz100 beverage is built around four core pillars:
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-                <div className="p-3 bg-healer-cream/20 rounded-xl">
-                  <span className="font-bold text-healer-green block mb-1">
-                    Taste
-                  </span>
-                  <span className="text-healer-green/70">
-                    Refreshing flavor inspired by authentic herbal traditions.
-                  </span>
-                </div>
-                <div className="p-3 bg-healer-cream/20 rounded-xl">
-                  <span className="font-bold text-healer-green block mb-1">
-                    Refreshment
-                  </span>
-                  <span className="text-healer-green/70">
-                    A satisfying and hydrating drinking experience for everyday
-                    consumption.
-                  </span>
-                </div>
-                <div className="p-3 bg-healer-cream/20 rounded-xl">
-                  <span className="font-bold text-healer-green block mb-1">
-                    Happiness
-                  </span>
-                  <span className="text-healer-green/70">
-                    Enjoyment without compromise, allowing consumers to indulge
-                    with confidence.
-                  </span>
-                </div>
-                <div className="p-3 bg-healer-cream/20 rounded-xl">
-                  <span className="font-bold text-healer-green block mb-1">
-                    Cleaner Formulation
-                  </span>
-                  <span className="text-healer-green/70">
-                    No added sugar overloads and no artificial preservatives.
-                  </span>
-                </div>
-              </div>
-              <p className="mt-4 italic text-healer-gold font-serif text-center text-sm">
-                Almaz100 Global - Where herbal heritage meets modern refreshment.
-              </p>
-            </div>
 
-            {/* Our Story & Vision */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="md:col-span-2 space-y-4 text-healer-green/80 text-sm leading-relaxed">
-                <h3 className="text-xl font-serif text-healer-green italic font-bold">
-                  Our Story
-                </h3>
+              <div
+                className="space-y-4 text-zinc-300 leading-relaxed max-w-4xl mb-10"
+                style={{ fontSize: "var(--step-0)" }}
+              >
                 <p>
-                  The inspiration behind Almaz100 Global emerged from the
-                  personal journey of founder <strong>Noorul Eman</strong>.
+                  <strong className="text-white font-semibold">
+                    Almaz100 Global Private Limited
+                  </strong>{" "}
+                  is a Kerala-based wellness beverage company founded on a simple
+                  belief: people should not have to choose between taste,
+                  refreshment, and health[cite: 1].
                 </p>
                 <p>
-                  During a challenging period marked by financial setbacks and
-                  extensive travel, he observed a common human behavior: people
-                  of all ages consumed soft drinks not only to quench thirst, but
-                  also to experience enjoyment, refreshment, and happiness.
-                </p>
-                <blockquote className="border-l-2 border-healer-gold pl-4 italic text-healer-green font-serif py-1 my-2">
-                  "Can a beverage deliver taste, refreshment, and happiness without
-                  the health concerns associated with conventional soft drinks?"
-                </blockquote>
-                <p>
-                  Drawing from childhood memories of traditional herbal drinks
-                  prepared at home, he envisioned a product that could preserve
-                  the goodness of herbal traditions while meeting the
-                  expectations of modern consumers.
+                  Our mission is to create enjoyable wellness drinks that deliver
+                  authentic flavor and refreshment without the excessive added
+                  sugars and preservative-heavy formulations commonly found in
+                  conventional soft drinks[cite: 1]. By combining traditional herbal
+                  wisdom with modern beverage innovation, Almaz100 is building a
+                  new generation of clean-label wellness beverages for consumers
+                  in India and international markets[cite: 1].
                 </p>
                 <p>
-                  Despite early funding and operational challenges, the vision
-                  continued to grow. The company gained momentum under the
-                  leadership of <strong>Haseena Abdul Majeed</strong>, Managing
-                  Director, whose confidence in the brand's social relevance,
-                  commercial potential, and export opportunities helped establish
-                  and expand Almaz100 Global.
-                </p>
-                <p>
-                  The leadership team was further strengthened by{" "}
-                  <strong>Shaju</strong>, Director, whose agricultural expertise
-                  supports the company's commitment to sourcing high-quality,
-                  pesticide-free herbs. Together, the team combines
-                  entrepreneurial vision, business leadership, and agricultural
-                  knowledge to build a trusted wellness beverage brand.
+                  At the heart of our portfolio is{" "}
+                  <span className="text-[#2ad494] font-medium">
+                    Healer Herbal Water
+                  </span>
+                  , a modern botanical beverage inspired by traditional herbal
+                  drinks once prepared in households using carefully selected
+                  herbs[cite: 1]. Today, that heritage is being reimagined into a
+                  scalable, premium wellness product designed for contemporary
+                  lifestyles[cite: 1].
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center p-6 bg-healer-green text-white rounded-2xl">
-                <h3 className="text-healer-gold uppercase tracking-[0.2em] text-xs font-bold mb-3">
-                  Vision
-                </h3>
-                <p className="font-serif italic text-lg leading-relaxed">
-                  "To build a globally trusted wellness beverage brand from Kerala
-                  by transforming traditional herbal wisdom into modern, scalable,
-                  and accessible drinks."
+              {/* Product Philosophy Cards */}
+              <div className="mb-12 bg-[#5f9ea0] p-6 md:p-8 rounded-2xl border border-zinc-700/60 backdrop-blur-sm">
+                <h4
+                  className="font-serif text-[#00ff9f] italic mb-6 font-semibold"
+                  style={{ fontSize: "var(--step-11)" }}
+                >
+                  Our Product Philosophy
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    {
+                      title: "Taste",
+                      desc: "Refreshing flavor inspired by authentic herbal traditions[cite: 1].",
+                    },
+                    {
+                      title: "Refreshment",
+                      desc: "A satisfying and hydrating drinking experience for everyday consumption[cite: 1].",
+                    },
+                    {
+                      title: "Happiness",
+                      desc: "Enjoyment without compromise, allowing consumers to indulge with confidence[cite: 1].",
+                    },
+                    {
+                      title: "Cleaner Formulation",
+                      desc: "No added sugar overloads and no artificial preservatives[cite: 1].",
+                    },
+                  ].map((pillar, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 bg-[#2d4647] rounded-xl border border-zinc-700/50 hover:border-[#2ad494]/40 transition-colors"
+                    >
+                      <span
+                        className="font-bold text-white block mb-1.5"
+                        style={{ fontSize: "var(--step-0)" }}
+                      >
+                        {pillar.title}
+                      </span>
+                      <span
+                        className="text-zinc-400 block leading-normal"
+                        style={{ fontSize: "var(--step--10)" }}
+                      >
+                        {pillar.desc}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p
+                  className="mt-6 italic text-[#14ff5b] font-serif text-center"
+                  style={{ fontSize: "var(--step-0)" }}
+                >
+                  Almaz100 Global - Where herbal heritage meets modern refreshment.[cite: 1]
                 </p>
+              </div>
+
+              {/* Our Story & Vision */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div className="lg:col-span-2 space-y-4 text-zinc-300">
+                  <h4
+                    className="font-serif text-white italic font-semibold mb-2"
+                    style={{ fontSize: "var(--step-12)" }}
+                  >
+                    Our Story
+                  </h4>
+                  <p style={{ fontSize: "var(--step-0)" }}>
+                    The inspiration behind Almaz100 Global emerged from the
+                    personal journey of founder{" "}
+                    <strong className="text-white">Noorul Eman</strong>[cite: 1].
+                  </p>
+                  <p style={{ fontSize: "var(--step-0)" }}>
+                    During a challenging period marked by financial setbacks and
+                    extensive travel, he observed a common human behavior: people of
+                    all ages consumed soft drinks not only to quench thirst, but
+                    also to experience enjoyment, refreshment, and happiness[cite: 1].
+                  </p>
+                  
+                  <blockquote className="relative my-4 p-4 rounded-xl bg-zinc-800/50 border-l-4 border-[#2ad494] text-zinc-100 font-serif italic flex gap-3">
+                    <Quote className="text-[#2ad494] shrink-0" size={20} />
+                    <span style={{ fontSize: "var(--step-11)" }}>
+                      "Can a beverage deliver taste, refreshment, and happiness
+                      without the health concerns associated with conventional
+                      soft drinks?"[cite: 1]
+                    </span>
+                  </blockquote>
+
+                  <p style={{ fontSize: "var(--step-0)" }}>
+                    Drawing from childhood memories of traditional herbal drinks
+                    prepared at home, he envisioned a product that could preserve
+                    the goodness of herbal traditions while meeting the expectations
+                    of modern consumers[cite: 1].
+                  </p>
+                  <p style={{ fontSize: "var(--step-0)" }}>
+                    Despite early funding and operational challenges, the vision
+                    continued to grow[cite: 1]. The company gained momentum under the
+                    leadership of <strong className="text-white">Haseena Abdul Majeed</strong>,
+                    Managing Director, whose confidence in the brand's social
+                    relevance, commercial potential, and export opportunities helped
+                    establish and expand Almaz100 Global[cite: 1].
+                  </p>
+                  <p style={{ fontSize: "var(--step-0)" }}>
+                    The leadership team was further strengthened by{" "}
+                    <strong className="text-white">Shaju</strong>, Director, whose
+                    agricultural expertise supports the company's commitment to
+                    sourcing high-quality, pesticide-free herbs[cite: 1]. Together, the
+                    team combines entrepreneurial vision, business leadership, and
+                    agricultural knowledge to build a trusted wellness beverage
+                    brand[cite: 1].
+                  </p>
+                </div>
+
+                <div className="p-8 bg-[#195c44] text-white rounded-2xl flex flex-col justify-center border border-emerald-400/20 shadow-lg">
+                  <h4
+                    className="text-emerald-200 uppercase tracking-[0.2em] font-bold mb-3"
+                    style={{ fontSize: "var(--step--10)" }}
+                  >
+                    Vision
+                  </h4>
+                  <p
+                    className="font-serif italic leading-relaxed"
+                    style={{ fontSize: "var(--step-11)" }}
+                  >
+                    "To build a globally trusted wellness beverage brand from Kerala
+                    by transforming traditional herbal wisdom into modern,
+                    scalable, and accessible drinks."[cite: 1]
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -253,18 +304,28 @@ const Profile = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="max-w-3xl"
           >
-            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">
+            <h2
+              className="text-healer-gold uppercase tracking-[0.3em] font-bold mb-4"
+              style={{ fontSize: "var(--step--10)" }}
+            >
               Corporate Profile
             </h2>
-            <h1 className="text-5xl md:text-6xl font-serif text-healer-green mb-6 italic">
+            <h1
+              className="font-serif text-healer-green mb-6 italic"
+              style={{ fontSize: "var(--step-14)" }}
+            >
               Precision in Purity
             </h1>
-            <p className="text-healer-green/70 text-lg leading-relaxed">
+            <p
+              className="text-healer-green/70 leading-relaxed"
+              style={{ fontSize: "var(--step-11)" }}
+            >
               Healer isn't just a beverage; it's a commitment to botanical
-              integrity. We combine the rigorous standards of modern
-              manufacturing with the delicate arts of traditional herbalism.
+              integrity[cite: 1]. We combine the rigorous standards of modern
+              manufacturing with the delicate arts of traditional herbalism[cite: 1].
             </p>
           </motion.div>
         </div>
@@ -273,31 +334,39 @@ const Profile = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="mb-32"
         >
           <div className="text-center mb-12">
-            <h2 className="text-healer-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">
+            <h2
+              className="text-healer-gold uppercase tracking-[0.3em] font-bold mb-2"
+              style={{ fontSize: "var(--step--10)" }}
+            >
               Our Leadership
             </h2>
-            <h3 className="text-3xl md:text-4xl font-serif text-healer-green italic">
+            <h3
+              className="font-serif text-healer-green italic"
+              style={{ fontSize: "var(--step-13)" }}
+            >
               Core Leadership Team
             </h3>
-            <div className="w-20 h-px bg-healer-gold mx-auto mt-6"></div>
+            <div className="w-20 h-px bg-healer-gold mx-auto mt-4"></div>
           </div>
 
-          {/* Responsive Flex/Grid Container centered for 5 cards */}
+          {/* Centered responsive flex layout for the 5 profile items */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-10">
             {executiveLeadership.map((leader, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="group w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.75rem)] flex"
               >
                 <TripleFrameCard className="bg-gradient-to-b from-gray-50 to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between w-full">
                   <div>
-                    {/* Full Image Container - Full width */}
+                    {/* Image container with ratio preserved */}
                     <div className="relative w-full pt-[100%] bg-gradient-to-br from-healer-green/10 to-healer-gold/10 overflow-hidden">
                       {leader.image ? (
                         <>
@@ -332,13 +401,22 @@ const Profile = () => {
 
                     {/* Content Section */}
                     <div className="p-6 text-center">
-                      <h4 className="text-xl font-serif text-healer-green mb-2 italic">
+                      <h4
+                        className="font-serif text-healer-green mb-2 italic"
+                        style={{ fontSize: "var(--step-12)" }}
+                      >
                         {leader.name}
                       </h4>
-                      <p className="text-healer-gold font-share text-xs uppercase tracking-wider font-semibold mb-4">
+                      <p
+                        className="text-healer-gold font-share uppercase tracking-wider font-semibold mb-4"
+                        style={{ fontSize: "var(--step--10)" }}
+                      >
                         {leader.role}
                       </p>
-                      <p className="text-healer-green/70 text-xs leading-relaxed text-left">
+                      <p
+                        className="text-healer-green/70 text-left leading-relaxed"
+                        style={{ fontSize: "var(--step-0)" }}
+                      >
                         {leader.description}
                       </p>
                     </div>
@@ -360,13 +438,19 @@ const Profile = () => {
               {specs.map((item, index) => (
                 <TripleFrameCard
                   key={index}
-                  className="p-8 bg-[#444] text-white rounded-2xl border border-white/10"
+                  className="p-8 bg-[#234b66] text-white rounde-2xl border border-white/10"
                 >
                   <div className="text-[#28a931] mb-6">{item.icon}</div>
-                  <h3 className="font-serif text-2xl mb-3 italic">
+                  <h3
+                    className="font-serif mb-3 italic"
+                    style={{ fontSize: "var(--step-13)" }}
+                  >
                     {item.title}
                   </h3>
-                  <p className="text-white/60 font-share text-sm leading-relaxed">
+                  <p
+                    className="text-white/60 font-share leading-relaxed"
+                    style={{ fontSize: "var(--step-0)" }}
+                  >
                     {item.desc}
                   </p>
                 </TripleFrameCard>
@@ -384,13 +468,19 @@ const Profile = () => {
                 {specs.map((item, index) => (
                   <TripleFrameCard
                     key={index}
-                    className="w-[300px] p-8 bg-[#444] text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
+                    className="w-[300px] p-8 bg-[#234b66] text-white rounded-2xl border border-healer-green/30 shadow-2xl backdrop-blur-xl"
                   >
                     <div className="text-[#45924a] mb-4">{item.icon}</div>
-                    <h3 className="font-serif text-2xl mb-2 italic">
+                    <h3
+                      className="font-serif mb-2 italic"
+                      style={{ fontSize: "var(--step-12)" }}
+                    >
                       {item.title}
                     </h3>
-                    <p className="text-white/50 font-share text-xs leading-relaxed">
+                    <p
+                      className="text-white/50 font-share leading-relaxed"
+                      style={{ fontSize: "var(--step--10)" }}
+                    >
                       {item.desc}
                     </p>
                   </TripleFrameCard>
@@ -404,51 +494,74 @@ const Profile = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="bg-[#444] text-white p-6 md:p-10 rounde-[2rem] relative overflow-hidden"
+          viewport={{ once: true }}
+          className="bg-[#234b66] text-white p-6 md:p-10 rounde-[2rem] relative overflow-hidden"
         >
           <TripleFrameCard className="relative z-10 p-6 md:p-10 border-white/5">
-            <h3 className="text-3xl md:text-4xl font-serif mb-12 italic border-b border-white/10 pb-6 text-healer-gold">
+            <h3
+              className="font-serif mb-12 italic border-b border-white/10 pb-6 text-healer-gold"
+              style={{ fontSize: "var(--step-13)" }}
+            >
               Operational Matrix
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-24">
-              <div className="group text-center ">
-                <p className="text-[#28a931] font-share  text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
+              <div className="group">
+                <p
+                  className="text-[#28a931] font-share uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform"
+                  style={{ fontSize: "var(--step--10)" }}
+                >
                   Registered Office
                 </p>
-                <div className="text-lg font-share opacity-90 leading-relaxed">
-                  <span className="text-xl font-bold block mb-1">
-                    Almaz100 Global Pvt. Ltd.
+                <div
+                  className="font-share opacity-90 leading-relaxed"
+                  style={{ fontSize: "var(--step-0)" }}
+                >
+                  <span className="font-bold block mb-1 text-white">
+                    Almaz100 Global Pvt. Ltd.[cite: 1]
                   </span>
-                  CP 1/316 B, P.O. Palayamkunnu
-                  <br />
-                  Varkala, Thiruvananthapuram
-                  <br />
+                  CP 1/316 B, P.O. Palayamkunnu<br />
+                  Varkala, Thiruvananthapuram<br />
                   Kerala — 695146
                 </div>
               </div>
 
-              <div className="space-y-8  ">
-                <div className="group text-center ">
-                  <p className="text-[#28a931] font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
+              <div className="space-y-8">
+                <div className="group">
+                  <p
+                    className="text-[#28a931] font-share uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform"
+                    style={{ fontSize: "var(--step--10)" }}
+                  >
                     Contact Channels
                   </p>
-                  <div className="flex flex-col gap-2 justify-center ">
-                    <p className="text-xl font-share opacity-90 flex items-center gap-3 flex-wrap">
-                      <Phone size={16} /> +91 85930 89373
+                  <div className="flex flex-col gap-2">
+                    <p
+                      className="font-share opacity-90 flex items-center gap-3 flex-wrap"
+                      style={{ fontSize: "var(--step-0)" }}
+                    >
+                      <Phone size={16} /> +91 85930 89373[cite: 1]
                     </p>
-                    <p className="text-xl font-share opacity-90 flex items-center gap-3 flex-wrap">
-                      <Phone size={16} /> +91 96332 32232
+                    <p
+                      className="font-share opacity-90 flex items-center gap-3 flex-wrap"
+                      style={{ fontSize: "var(--step-0)" }}
+                    >
+                      <Phone size={16} /> +91 96332 32232[cite: 1]
                     </p>
                   </div>
                 </div>
 
-                <div className="group text-center">
-                  <p className="text-[#28a931] font-share text-[10px] uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform">
+                <div className="group">
+                  <p
+                    className="text-[#28a931] font-share uppercase tracking-[0.3em] mb-3 group-hover:translate-x-2 transition-transform"
+                    style={{ fontSize: "var(--step--10)" }}
+                  >
                     Digital Enquiries
                   </p>
-                  <p className="text-xl font-share opacity-90 flex items-center gap-3 break-all">
-                    <Mail size={16} /> almaz100.healer@gmail.com
+                  <p
+                    className="font-share opacity-90 flex items-center gap-3 break-all"
+                    style={{ fontSize: "var(--step-0)" }}
+                  >
+                    <Mail size={16} /> almaz100.healer@gmail.com[cite: 1]
                   </p>
                 </div>
               </div>
